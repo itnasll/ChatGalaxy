@@ -71,3 +71,11 @@ func _on_timer_timeout():
 	rpc("msg_rpc",usrnm, message.text)
 	message.text = ""
 	
+
+
+func _on_host_button_down():
+	pass # Replace with function body.
+
+
+func _on_button_pressed():
+	print("hola")

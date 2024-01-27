@@ -6,9 +6,6 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 
 func _on_texture_button_pressed():
@@ -17,4 +14,4 @@ func _on_texture_button_pressed():
 	#emit_signal("palabra_enviada", palabra)
 	emit_signal("enviaVida", palabra)
 	#print(palabra, "hola")
-	self.tree_exiting
+#	self.tree_exiting

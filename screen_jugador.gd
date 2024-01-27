@@ -19,12 +19,7 @@ var vidasCompletasEstado = estadoEspaciovidas.INCOMPLETAS
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$VBoxContainer/HBoxContainer2/Node2D.vColor = "Green"
-	$VBoxContainer/HBoxContainer2/Node2D2.vColor = "Yellow"
-	$VBoxContainer/HBoxContainer2/Node2D3.vColor = "Blue"
-	$VBoxContainer/HBoxContainer2/Node2D.scale.x = 0.90
-	$VBoxContainer/HBoxContainer2/Node2D2.scale.x = 0.90
-	$VBoxContainer/HBoxContainer2/Node2D3.scale.x = 0.90
+
 	# Llena los arrays con números en el rango del 60 al 350
 	for i in range(60, 360, 15):
 		vida1.append(i)
@@ -35,19 +30,19 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	var uno = $VBoxContainer/HBoxContainer2/EspVida1
-	var dos = $VBoxContainer/HBoxContainer2/EspVida2
-	var tres = $VBoxContainer/HBoxContainer2/EspVida3
-	if uno.get_child_count() == 1:
-		if $VBoxContainer/HBoxContainer2/Node2D.vVida <= 0:
-			uno.get_child(0).free()
-	if dos.get_child_count() == 1:
-		if $VBoxContainer/HBoxContainer2/Node2D2.vVida <= 0:
-			dos.get_child(0).free()
-	if tres.get_child_count() == 1:
-		if $VBoxContainer/HBoxContainer2/Node2D3.vVida <= 0:
-			tres.get_child(0).free()
+func _process(_delta):
+	var uno = $Carriles/Carril1/EspVida
+	var dos = $Carriles/Carril2/EspVida
+	var tres = $Carriles/Carril3/EspVida
+#	if uno.get_child_count() == 1:
+#		if $VBoxContainer/HBoxContainer2/Node2D.vVida <= 0:
+#			uno.get_child(0).free()
+#	if dos.get_child_count() == 1:
+#		if $VBoxContainer/HBoxContainer2/Node2D2.vVida <= 0:
+#			dos.get_child(0).free()
+#	if tres.get_child_count() == 1:
+#		if $VBoxContainer/HBoxContainer2/Node2D3.vVida <= 0:
+#			tres.get_child(0).free()
 
 	match estadoSelCarta:
 		EstadoSeleccionarCarta.SELECCIONADA:
@@ -67,12 +62,6 @@ func _process(delta):
 					vidasCompletasEstado = estadoEspaciovidas.INCOMPLETAS
 
 
-	if $VBoxContainer/HBoxContainer/botonAreaAtaque.get_child_count() > 0 :
-		$VBoxContainer/HBoxContainer/botonAreaAtaque.disabled = true
-	else:
-		$VBoxContainer/HBoxContainer/botonAreaAtaque.disabled = false
-	
-				
 
 func _on_almacen_envio_palabra(argu):
 	var ls = LabelSettings.new()
@@ -125,6 +114,11 @@ func _on_carta_vida_envia_vida(argumento):
 	vidaSeleccionada.append(argumento)
 	print("elpepe")
  
+
+#NOS QUEDAMOS ACA ABAJO
+#separando carriles de screen_jugador
+#opncion de separar conteiner vidas
+
 func cartaAUbicacion(argu,argu2):
 	var node = get_node(argu) #boton ubicacion
 	var node2 = get_node(argu2)#barra vida
@@ -205,3 +199,7 @@ func _on_restar_pressed(extra_arg_0):
 
 
 
+
+
+func _on_carril_1_slot_vida_pressed():
+	pass # Replace with function body.
