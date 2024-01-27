@@ -1,0 +1,107 @@
+[gd_scene load_steps=3 format=3 uid="uid://csetxp3xoieys"]
+
+[ext_resource type="Script" path="res://Main.gd" id="1_mtiiy"]
+[ext_resource type="PackedScene" uid="uid://bmktppmuuylsa" path="res://vida.tscn" id="2_05im7"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_mtiiy")
+
+[node name="Host" type="Button" parent="."]
+offset_left = 497.0
+offset_top = 92.0
+offset_right = 615.0
+offset_bottom = 157.0
+text = "host"
+
+[node name="Join" type="Button" parent="."]
+offset_left = 635.0
+offset_top = 92.0
+offset_right = 753.0
+offset_bottom = 157.0
+text = "join
+"
+
+[node name="Username" type="LineEdit" parent="."]
+offset_left = 501.0
+offset_top = 48.0
+offset_right = 659.0
+offset_bottom = 79.0
+placeholder_text = "username"
+
+[node name="Send" type="Button" parent="."]
+offset_left = 502.0
+offset_top = -8.0
+offset_right = 553.0
+offset_bottom = 23.0
+text = "SEND"
+
+[node name="Message" type="LineEdit" parent="."]
+offset_left = 506.0
+offset_top = -52.0
+offset_right = 664.0
+offset_bottom = -21.0
+
+[node name="Messages" type="TextEdit" parent="."]
+offset_left = 501.0
+offset_top = -332.0
+offset_right = 801.0
+offset_bottom = -82.0
+editable = false
+
+[node name="MyMSG" type="TextEdit" parent="."]
+offset_left = 132.0
+offset_top = -55.0
+offset_right = 432.0
+offset_bottom = 195.0
+editable = false
+
+[node name="Yo" type="Label" parent="MyMSG"]
+layout_mode = 0
+offset_left = 117.0
+offset_top = 3.0
+offset_right = 170.0
+offset_bottom = 29.0
+text = "Yo"
+horizontal_alignment = 1
+
+[node name="EnMSG" type="TextEdit" parent="."]
+offset_left = -271.0
+offset_top = -350.0
+offset_right = 29.0
+offset_bottom = -100.0
+editable = false
+
+[node name="Enemy" type="Label" parent="EnMSG"]
+layout_mode = 0
+offset_left = 107.0
+offset_right = 160.0
+offset_bottom = 26.0
+text = "Enemy"
+horizontal_alignment = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(249, -89)
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 65.0
+autostart = true
+
+[node name="vidaM" parent="." instance=ExtResource("2_05im7")]
+position = Vector2(284, 217)
+vVida = 100
+
+[node name="vidaE" parent="." instance=ExtResource("2_05im7")]
+position = Vector2(-118, -74)
+vVida = 100
+
+[node name="TLeft" type="Label" parent="."]
+offset_left = 223.0
+offset_top = -317.0
+offset_right = 263.0
+offset_bottom = -294.0
+
+[connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
+[connection signal="pressed" from="Join" to="." method="_on_join_pressed"]
+[connection signal="pressed" from="Send" to="." method="_on_send_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

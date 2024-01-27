@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://btvj5n0urnnn3"]
+
+[ext_resource type="Texture2D" uid="uid://bvcofvvynfa4v" path="res://icon.svg" id="1_gpkxk"]
+[ext_resource type="Script" path="res://palabra.gd" id="2_3e78w"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tnfkr"]
+
+[node name="CenterContainer" type="CenterContainer"]
+script = ExtResource("2_3e78w")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("1_gpkxk")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_tnfkr")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

@@ -1,0 +1,25 @@
+En Godot 4, puedes recibir una señal de un botón de una escena instanciada por código de la siguiente manera:
+
+```gdscript
+# Supongamos que tienes una escena llamada "MyScene" con un botón llamado "MyButton"
+var scene = load("res://path_to_your_scene/MyScene.tscn")
+var instance = scene.instance()
+
+# Asegúrate de que la escena esté añadida al árbol de la escena
+get_tree().root.add_child(instance)
+
+# Conecta la señal del botón a una función en tu script
+var button = instance.get_node("MyButton")
+button.connect("pressed", self, "_on_button_pressed")
+
+func _on_button_pressed():
+	print("El botón fue presionado")
+```
+
+En este código, `load("res://path_to_your_scene/MyScene.tscn")` carga la escena que quieres instanciar. `scene.instance()` crea una nueva instancia de la escena. `get_tree().root.add_child(instance)` añade la instancia de la escena al árbol de la escena. `instance.get_node("MyButton")` obtiene el nodo del botón en la escena instanciada. `button.connect("pressed", self, "_on_button_pressed")` conecta la señal `pressed` del botón a la función `_on_button_pressed`. La función `_on_button_pressed` se ejecutará cuando se presione el botón¹.
+
+Origen: Conversación con Bing, 21/1/2024
+(1) Connect signal from instantiated scene - Programming - Godot Forum. https://forum.godotengine.org/t/connect-signal-from-instantiated-scene/35527.
+(2) Godot: how to connect button signal via script - Stack Overflow. https://stackoverflow.com/questions/75644816/godot-how-to-connect-button-signal-via-script.
+(3) Godot listening to signals from multiple instances of the same scene .... https://stackoverflow.com/questions/68675099/godot-listening-to-signals-from-multiple-instances-of-the-same-scene.
+(4) Signals in Godot 4 - Tutorial. https://www.gotut.net/signals-in-godot-4/.

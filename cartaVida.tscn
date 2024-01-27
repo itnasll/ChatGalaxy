@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://de8rjhmu5qmhv"]
+
+[ext_resource type="Script" path="res://cartaVida.gd" id="1_5gowm"]
+[ext_resource type="Texture2D" uid="uid://d1smi3vvvrt1k" path="res://corazon.svg" id="1_ii5jv"]
+
+[node name="CartaVida" type="CenterContainer"]
+scale = Vector2(2.18739, 1.48528)
+script = ExtResource("1_5gowm")
+
+[node name="TextureButton" type="TextureRect" parent="."]
+modulate = Color(0.992157, 0, 0.219608, 1)
+self_modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(90, 120)
+layout_mode = 2
+texture = ExtResource("1_ii5jv")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "150"
+horizontal_alignment = 1
+vertical_alignment = 1

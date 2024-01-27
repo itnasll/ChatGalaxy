@@ -1,0 +1,140 @@
+[gd_scene load_steps=5 format=3 uid="uid://htp8k12o66fn"]
+
+[ext_resource type="Script" path="res://screen_jugador.gd" id="1_mdsgf"]
+[ext_resource type="PackedScene" uid="uid://bp68dlxrj27if" path="res://almacen.tscn" id="1_til80"]
+[ext_resource type="PackedScene" uid="uid://bmktppmuuylsa" path="res://vida.tscn" id="3_37ltp"]
+[ext_resource type="Texture2D" uid="uid://db26mcb0u4kfs" path="res://red_Border.png" id="4_4n3rs"]
+
+[node name="ScreenJugador" type="Node2D"]
+script = ExtResource("1_mdsgf")
+
+[node name="Almacen" parent="." instance=ExtResource("1_til80")]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(80, 80)
+offset_left = 59.0
+offset_top = 276.0
+offset_right = 967.0
+offset_bottom = 356.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+alignment = 1
+
+[node name="restar" type="Button" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "resar 10"
+
+[node name="B2" type="Button" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="B3" type="Button" parent="VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+alignment = 1
+
+[node name="botonAreaAtaque" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="botonAreaAtaque2" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="botonAreaAtaque3" type="Button" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+alignment = 1
+
+[node name="EspVida1" type="Button" parent="VBoxContainer/HBoxContainer2" groups=["espaciosVidas"]]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="Node2D" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("3_37ltp")]
+position = Vector2(155, 67)
+
+[node name="EspVida2" type="Button" parent="VBoxContainer/HBoxContainer2" groups=["espaciosVidas"]]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="Node2D2" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("3_37ltp")]
+position = Vector2(454, 70)
+
+[node name="EspVida3" type="Button" parent="VBoxContainer/HBoxContainer2" groups=["espaciosVidas"]]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="Node2D3" parent="VBoxContainer/HBoxContainer2" instance=ExtResource("3_37ltp")]
+position = Vector2(751, 71)
+
+[node name="containerVidas" type="HBoxContainer" parent="."]
+layout_direction = 2
+offset_left = 15.0
+offset_top = 518.445
+offset_right = 515.0
+offset_bottom = 638.445
+
+[node name="vida1" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+texture_disabled = ExtResource("4_4n3rs")
+stretch_mode = 0
+
+[node name="vida2" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+texture_disabled = ExtResource("4_4n3rs")
+stretch_mode = 0
+
+[node name="vida3" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+texture_disabled = ExtResource("4_4n3rs")
+stretch_mode = 0
+
+[node name="vida4" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+texture_disabled = ExtResource("4_4n3rs")
+stretch_mode = 0
+
+[node name="vida5" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+texture_disabled = ExtResource("4_4n3rs")
+stretch_mode = 0
+
+[node name="EntregaVida" type="Button" parent="."]
+offset_left = 1010.0
+offset_top = 197.0
+offset_right = 1123.0
+offset_bottom = 317.0
+text = "Entregar Vida"
+
+[connection signal="envioPalabra" from="Almacen" to="." method="_on_almacen_envio_palabra"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/restar" to="." method="_on_restar_pressed" binds= ["VBoxContainer/HBoxContainer2/Node2D"]]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/B3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/botonAreaAtaque" to="." method="_on_boton_area_ataque_pressed" binds= ["VBoxContainer/HBoxContainer/botonAreaAtaque", "VBoxContainer/HBoxContainer2/EspVida1"]]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/botonAreaAtaque2" to="." method="_on_boton_area_ataque_pressed" binds= ["VBoxContainer/HBoxContainer/botonAreaAtaque2", "VBoxContainer/HBoxContainer2/EspVida2"]]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/botonAreaAtaque3" to="." method="_on_boton_area_ataque_pressed" binds= ["VBoxContainer/HBoxContainer/botonAreaAtaque3", "VBoxContainer/HBoxContainer2/EspVida3"]]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/EspVida1" to="." method="_on_esp_vida_1_pressed" binds= ["VBoxContainer/HBoxContainer2/EspVida1", "VBoxContainer/HBoxContainer2/Node2D"]]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/EspVida2" to="." method="_on_esp_vida_1_pressed" binds= ["VBoxContainer/HBoxContainer2/EspVida2", "VBoxContainer/HBoxContainer2/Node2D2"]]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/EspVida3" to="." method="_on_esp_vida_1_pressed" binds= ["VBoxContainer/HBoxContainer2/EspVida3", "VBoxContainer/HBoxContainer2/Node2D3"]]
+[connection signal="child_exiting_tree" from="containerVidas" to="." method="_on_container_vidas_child_exiting_tree"]
+[connection signal="pressed" from="containerVidas/vida1" to="." method="_on_vida_1_pressed" binds= ["containerVidas/vida1"]]
+[connection signal="pressed" from="containerVidas/vida2" to="." method="_on_vida_2_pressed" binds= ["containerVidas/vida2"]]
+[connection signal="pressed" from="containerVidas/vida3" to="." method="_on_vida_3_pressed" binds= ["containerVidas/vida3"]]
+[connection signal="pressed" from="containerVidas/vida4" to="." method="_on_vida_4_pressed" binds= ["containerVidas/vida4"]]
+[connection signal="pressed" from="containerVidas/vida5" to="." method="_on_vida_5_pressed" binds= ["containerVidas/vida5"]]
+[connection signal="pressed" from="EntregaVida" to="." method="_on_entrega_vida_pressed"]
