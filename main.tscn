@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://csetxp3xoieys"]
+[gd_scene load_steps=4 format=3 uid="uid://csetxp3xoieys"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_mtiiy"]
 [ext_resource type="PackedScene" uid="uid://bmktppmuuylsa" path="res://vida.tscn" id="2_05im7"]
+[ext_resource type="PackedScene" uid="uid://dr74rj5m0b63n" path="res://Button_Scene.tscn" id="3_ndvse"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_mtiiy")
@@ -101,7 +102,14 @@ offset_top = -317.0
 offset_right = 263.0
 offset_bottom = -294.0
 
+[node name="Button_Scene" parent="." instance=ExtResource("3_ndvse")]
+
+[connection signal="button_down" from="Host" to="." method="_on_host_button_down"]
 [connection signal="pressed" from="Host" to="." method="_on_host_pressed"]
 [connection signal="pressed" from="Join" to="." method="_on_join_pressed"]
 [connection signal="pressed" from="Send" to="." method="_on_send_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Button_Scene/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button_Scene/Button" to="vidaM" method="_on_button_pressed"]
+
+[editable path="Button_Scene"]
