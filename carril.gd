@@ -23,5 +23,23 @@ func _process(_delta):
 
 
 func _on_esp_vida_pressed():
+	var almacen = get_node("../../Almacen/Mano")
+	for i in almacen.get_children():
+		print("enmano:", i)
+		if i.estaSeleccionada:
+			#var elel = almacen.get_node(i)
+			print("seleccionada", i)
+#			almacen.remove_child(i)
+#			var aasd = get_node("EspVida")
+#			aasd.add_child(i)
+			i.reparent($".")
+			print("asd__",i)
+	#print(almacen)
+	#print(self)
 	emit_signal("Slot_vida_pressed")
+	pass # Replace with function body.
+
+
+func _on_accion_pressed():
+	print($EspVida.get_child_count())
 	pass # Replace with function body.

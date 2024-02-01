@@ -104,7 +104,7 @@ func _on_entrega_vida_pressed():
 			print("tiene")
 			print(i.get_child_count())
 			var EsI = escena_instanciada.instantiate()
-			EsI.get_node("TextureButton/Label").text = str(vida1.pick_random())
+			EsI.get_node("Boton/Label").text = str(vida1.pick_random())
 			EsI.scale.x= 1
 			EsI.scale.y= 1
 			i.add_child(EsI)
@@ -113,7 +113,7 @@ func _on_entrega_vida_pressed():
 func _on_carta_vida_envia_vida(argumento):
 	vidaSeleccionada.append(argumento)
 	print("elpepe")
- 
+
 
 #NOS QUEDAMOS ACA ABAJO
 #separando carriles de screen_jugador

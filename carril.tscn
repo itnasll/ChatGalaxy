@@ -17,7 +17,7 @@ text = "restar 10"
 custom_minimum_size = Vector2(300, 30)
 layout_mode = 2
 
-[node name="EspVida" type="Button" parent="." groups=["espaciosVidas"]]
+[node name="EspVida" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 30)
 layout_mode = 2
 
@@ -32,6 +32,7 @@ offset_top = 0.0
 offset_right = 318.0
 offset_bottom = 27.0
 
+[connection signal="pressed" from="Accion" to="." method="_on_accion_pressed"]
 [connection signal="pressed" from="EspVida" to="." method="_on_esp_vida_pressed"]
 
 [editable path="Barra de Vida"]
