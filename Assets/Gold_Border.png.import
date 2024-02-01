@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1smi3vvvrt1k"
-path="res://.godot/imported/corazon.svg-dcd56908f7e3240a4110ee8a7c0b9624.ctex"
+uid="uid://2lqny3166gi"
+path="res://.godot/imported/Gold_Border.png-1d9d2dedde71a0e7fe94d45c36fa4a65.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://corazon.svg"
-dest_files=["res://.godot/imported/corazon.svg-dcd56908f7e3240a4110ee8a7c0b9624.ctex"]
+source_file="res://Assets/Gold_Border.png"
+dest_files=["res://.godot/imported/Gold_Border.png-1d9d2dedde71a0e7fe94d45c36fa4a65.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

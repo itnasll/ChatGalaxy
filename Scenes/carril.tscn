@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://cbnfgtx508iop"]
 
-[ext_resource type="Script" path="res://carril.gd" id="1_3wh4e"]
-[ext_resource type="PackedScene" uid="uid://bmktppmuuylsa" path="res://vida.tscn" id="1_qfgep"]
+[ext_resource type="PackedScene" uid="uid://bmktppmuuylsa" path="res://Scenes/vida.tscn" id="1_qfgep"]
+[ext_resource type="Script" path="res://Scripts/carril.gd" id="1_r5mwn"]
 
 [node name="Carril" type="VBoxContainer"]
 offset_right = 303.0
 offset_bottom = 55.0
-script = ExtResource("1_3wh4e")
+script = ExtResource("1_r5mwn")
 
 [node name="Accion" type="Button" parent="."]
 custom_minimum_size = Vector2(300, 0)
@@ -17,7 +17,10 @@ text = "restar 10"
 custom_minimum_size = Vector2(300, 30)
 layout_mode = 2
 
-[node name="EspVida" type="Button" parent="."]
+[node name="EspYCarta" type="VSplitContainer" parent="."]
+layout_mode = 2
+
+[node name="EspVida" type="Button" parent="EspYCarta"]
 custom_minimum_size = Vector2(300, 30)
 layout_mode = 2
 
@@ -33,6 +36,6 @@ offset_right = 318.0
 offset_bottom = 27.0
 
 [connection signal="pressed" from="Accion" to="." method="_on_accion_pressed"]
-[connection signal="pressed" from="EspVida" to="." method="_on_esp_vida_pressed"]
+[connection signal="pressed" from="EspYCarta/EspVida" to="." method="_on_esp_vida_pressed"]
 
 [editable path="Barra de Vida"]

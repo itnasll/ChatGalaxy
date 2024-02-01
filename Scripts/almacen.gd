@@ -1,7 +1,7 @@
 extends Node2D
 
 #@onready var p_1 = $Mano/P1
-@onready var pre_carta = preload("res://cartaVida.tscn")
+@onready var pre_carta = preload("res://Scenes/cartaVida.tscn")
 signal envioPalabra(argu:Node)
 var palabra_sel : Array
 enum EstadoSeleccionarCarta { SELECCIONADA, NOSELECCIONADA, DESHABILITADAS}
@@ -21,7 +21,7 @@ func _process(_delta):
 		EstadoSeleccionarCarta.SELECCIONADA:
 			for j in $Mano.get_children():
 				if j.estaSeleccionada:
-					var mi_textura = load("res://Gold_Border.png")
+					var mi_textura = load("res://Assets/Gold_Border.png")
 					j.get_child(0).set_texture_normal(mi_textura)
 				else:
 					j.get_child(0).texture_normal = null
@@ -44,10 +44,11 @@ func _ready():
 #	print("chau")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
-
+func cambiar_no_seleccionada():
+	estadoSelCarta = EstadoSeleccionarCarta.NOSELECCIONADA
 
 func _on_entrega_palabra_pressed():
-	var texture = preload("res://icono-de-ataque (Personalizado).png")
+	var texture = preload("res://Assets/icono-de-ataque (Personalizado).png")
 	var cartaNueva = pre_carta.instantiate()
 	cartaNueva.get_child(0).get_node("Imagen").set_texture(texture)
 	cartaNueva.size.x = 90
@@ -57,16 +58,14 @@ func _on_entrega_palabra_pressed():
 	$Mano.add_child(cartaNueva)
 
 func _on_botun_presed(asd):
-#	print("carta tocada")
-#	print(self)
-#	print(asd)
-#	print(asd.estaSeleccionada)
-	if asd.estaSeleccionada:
-		asd.estaSeleccionada = false
-		estadoSelCarta = EstadoSeleccionarCarta.NOSELECCIONADA
-	else:
-		asd.estaSeleccionada = true
-		estadoSelCarta = EstadoSeleccionarCarta.SELECCIONADA
+	if asd.get_parent().get_name() == "Mano":
+#		print("el padreses__", asd.get_parent())
+		if asd.estaSeleccionada:
+			asd.estaSeleccionada = false
+			estadoSelCarta = EstadoSeleccionarCarta.NOSELECCIONADA
+		else:
+			asd.estaSeleccionada = true
+			estadoSelCarta = EstadoSeleccionarCarta.SELECCIONADA
 		
 
 

@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://bmktppmuuylsa"]
 
-[ext_resource type="Script" path="res://vida.gd" id="1_l663q"]
+[ext_resource type="Script" path="res://Scripts/vida.gd" id="1_l663q"]
+
 
 [node name="Vida" type="Node2D"]
 script = ExtResource("1_l663q")

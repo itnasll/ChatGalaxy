@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2lqny3166gi"
-path="res://.godot/imported/Gold_Border.png-b5aebfae85911ff208c4e58924a89603.ctex"
+uid="uid://j2asc65hkwhk"
+path="res://.godot/imported/icono-de-ataque.jpg-28b2024619c824b717ad3ba2b537f0d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Gold_Border.png"
-dest_files=["res://.godot/imported/Gold_Border.png-b5aebfae85911ff208c4e58924a89603.ctex"]
+source_file="res://Assets/icono-de-ataque.jpg"
+dest_files=["res://.godot/imported/icono-de-ataque.jpg-28b2024619c824b717ad3ba2b537f0d1.ctex"]
 
 [params]
 

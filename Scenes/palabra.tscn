@@ -1,7 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://btvj5n0urnnn3"]
 
-[ext_resource type="Texture2D" uid="uid://bvcofvvynfa4v" path="res://icon.svg" id="1_gpkxk"]
-[ext_resource type="Script" path="res://palabra.gd" id="2_3e78w"]
+[ext_resource type="Texture2D" uid="uid://bvcofvvynfa4v" path="res://Assets/icon.svg" id="1_gpkxk"]
+[ext_resource type="Script" path="res://Scripts/palabra.gd" id="2_3e78w"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tnfkr"]
 

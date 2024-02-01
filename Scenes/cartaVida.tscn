@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://de8rjhmu5qmhv"]
 
-[ext_resource type="Script" path="res://cartaVida.gd" id="1_5gowm"]
-[ext_resource type="Texture2D" uid="uid://db26mcb0u4kfs" path="res://red_Border.png" id="2_gwabl"]
+[ext_resource type="Script" path="res://Scripts/cartaVida.gd" id="1_lav3k"]
+[ext_resource type="Texture2D" uid="uid://db26mcb0u4kfs" path="res://Assets/red_Border.png" id="2_3mjrf"]
 
 [node name="CartaVida" type="CenterContainer"]
 scale = Vector2(2.18739, 1.48528)
-script = ExtResource("1_5gowm")
+script = ExtResource("1_lav3k")
 
 [node name="Boton" type="TextureButton" parent="."]
 clip_contents = true
 custom_minimum_size = Vector2(90, 120)
 layout_mode = 2
-texture_disabled = ExtResource("2_gwabl")
+texture_disabled = ExtResource("2_3mjrf")
 stretch_mode = 6
 
 [node name="Imagen" type="TextureRect" parent="Boton"]

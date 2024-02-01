@@ -7,7 +7,7 @@ var states: Dictionary = {}
 var vida1 : Array = []
 var vida2 : Array = []
 var palabra_sel : Array
-const VDEs : String = "res://cartaVida.tscn"
+const VDEs : String = "res://Scenes/cartaVida.tscn"
 var escena_instanciada = preload(VDEs)
 
 enum EstadoSeleccionarCarta { SELECCIONADA, NOSELECCIONADA}
@@ -31,10 +31,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	var uno = $Carriles/Carril1/EspVida
-	var dos = $Carriles/Carril2/EspVida
-	var tres = $Carriles/Carril3/EspVida
-#	if uno.get_child_count() == 1:
+#	var uno = $Carriles/Carril1/EspVida
+#	var dos = $Carriles/Carril2/EspVida
+#	var tres = $Carriles/Carril3/EspVida
+##	if uno.get_child_count() == 1:
 #		if $VBoxContainer/HBoxContainer2/Node2D.vVida <= 0:
 #			uno.get_child(0).free()
 #	if dos.get_child_count() == 1:
@@ -44,23 +44,23 @@ func _process(_delta):
 #		if $VBoxContainer/HBoxContainer2/Node2D3.vVida <= 0:
 #			tres.get_child(0).free()
 
-	match estadoSelCarta:
-		EstadoSeleccionarCarta.SELECCIONADA:
-			pass
-		EstadoSeleccionarCarta.NOSELECCIONADA:
-			for j in $containerVidas.get_children():
-				j.texture_normal = null
-				j.disabled = false
-	match vidasCompletasEstado:
-		estadoEspaciovidas.INCOMPLETAS:
-			if uno.get_child_count() + dos.get_child_count() + tres.get_child_count() == 3:
-				vidasCompletasEstado = estadoEspaciovidas.COMPLETAS
-		estadoEspaciovidas.COMPLETAS:
-			get_tree().call_group("CartaVidas", "set_disabled", true)
-			for node in get_tree().get_nodes_in_group("espaciosVidas"):
-				if node.get_child_count() == 0:
-					vidasCompletasEstado = estadoEspaciovidas.INCOMPLETAS
-
+#	match estadoSelCarta:
+#		EstadoSeleccionarCarta.SELECCIONADA:
+#			pass
+#		EstadoSeleccionarCarta.NOSELECCIONADA:
+#			for j in $containerVidas.get_children():
+#				j.texture_normal = null
+#				j.disabled = false
+#	match vidasCompletasEstado:
+#		estadoEspaciovidas.INCOMPLETAS:
+#			if uno.get_child_count() + dos.get_child_count() + tres.get_child_count() == 3:
+#				vidasCompletasEstado = estadoEspaciovidas.COMPLETAS
+#		estadoEspaciovidas.COMPLETAS:
+#			get_tree().call_group("CartaVidas", "set_disabled", true)
+#			for node in get_tree().get_nodes_in_group("espaciosVidas"):
+#				if node.get_child_count() == 0:
+#					vidasCompletasEstado = estadoEspaciovidas.INCOMPLETAS
+	pass
 
 
 func _on_almacen_envio_palabra(argu):
@@ -153,7 +153,7 @@ func genericaVidaPresed(arg1):
 	var nodeH = node.get_child(0)
 	if vidaSeleccionada.size() == 0:
 		vidaSeleccionada.append(nodeH)
-		var mi_textura = load("res://Gold_Border.png")
+		var mi_textura = load("res://Assets/Gold_Border.png")
 		node.set_texture_normal(mi_textura)
 	
 		var elel = vidaSeleccionada[0]

@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://htp8k12o66fn"]
+[gd_scene load_steps=5 format=3 uid="uid://c3xl2f0km2lwt"]
 
-[ext_resource type="Script" path="res://screen_jugador.gd" id="1_mdsgf"]
-[ext_resource type="PackedScene" uid="uid://bp68dlxrj27if" path="res://almacen.tscn" id="1_til80"]
-[ext_resource type="PackedScene" uid="uid://cbnfgtx508iop" path="res://carril.tscn" id="3_4htyv"]
-[ext_resource type="Texture2D" uid="uid://db26mcb0u4kfs" path="res://red_Border.png" id="4_4n3rs"]
+[ext_resource type="Script" path="res://Scripts/screen_jugador.gd" id="1_d0ieh"]
+[ext_resource type="PackedScene" uid="uid://bp68dlxrj27if" path="res://Scenes/almacen.tscn" id="1_til80"]
+[ext_resource type="PackedScene" uid="uid://cbnfgtx508iop" path="res://Scenes/carril.tscn" id="3_4htyv"]
+[ext_resource type="Texture2D" uid="uid://db26mcb0u4kfs" path="res://Assets/red_Border.png" id="4_s245b"]
 
 [node name="ScreenJugador" type="Node2D"]
-script = ExtResource("1_mdsgf")
+script = ExtResource("1_d0ieh")
 
 [node name="Almacen" parent="." instance=ExtResource("1_til80")]
 
@@ -36,31 +36,31 @@ offset_bottom = 638.445
 [node name="vida1" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-texture_disabled = ExtResource("4_4n3rs")
+texture_disabled = ExtResource("4_s245b")
 stretch_mode = 0
 
 [node name="vida2" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-texture_disabled = ExtResource("4_4n3rs")
+texture_disabled = ExtResource("4_s245b")
 stretch_mode = 0
 
 [node name="vida3" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-texture_disabled = ExtResource("4_4n3rs")
+texture_disabled = ExtResource("4_s245b")
 stretch_mode = 0
 
 [node name="vida4" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-texture_disabled = ExtResource("4_4n3rs")
+texture_disabled = ExtResource("4_s245b")
 stretch_mode = 0
 
 [node name="vida5" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
-texture_disabled = ExtResource("4_4n3rs")
+texture_disabled = ExtResource("4_s245b")
 stretch_mode = 0
 
 [node name="EntregaVida" type="Button" parent="."]
