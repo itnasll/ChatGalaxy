@@ -2,20 +2,45 @@
 
 [ext_resource type="Script" path="res://Scripts/screen_jugador.gd" id="1_d0ieh"]
 [ext_resource type="PackedScene" uid="uid://bp68dlxrj27if" path="res://Scenes/almacen.tscn" id="1_til80"]
+[ext_resource type="PackedScene" uid="uid://c48eyfmc0kln8" path="res://Scenes/vista_enemigo.tscn" id="2_c4jxg"]
 [ext_resource type="PackedScene" uid="uid://cbnfgtx508iop" path="res://Scenes/carril.tscn" id="3_4htyv"]
-[ext_resource type="Texture2D" uid="uid://db26mcb0u4kfs" path="res://Assets/red_Border.png" id="4_s245b"]
 
 [node name="ScreenJugador" type="Node2D"]
 script = ExtResource("1_d0ieh")
 
-[node name="Almacen" parent="." instance=ExtResource("1_til80")]
+[node name="vistaEnemigo" parent="." instance=ExtResource("2_c4jxg")]
+position = Vector2(861, 77)
+
+[node name="Almacen" parent="." groups=["almacenes"] instance=ExtResource("1_til80")]
+position = Vector2(774, 354)
+
+[node name="Mano" parent="Almacen" index="0"]
+layout_direction = 3
+offset_left = -1147.0
+offset_top = 514.0
+offset_right = -491.0
+offset_bottom = 642.0
+
+[node name="Almacen2" parent="." groups=["almacenes"] instance=ExtResource("1_til80")]
+position = Vector2(770, 142)
+
+[node name="Mano" parent="Almacen2" index="0"]
+offset_left = -763.0
+offset_top = 730.0
+offset_right = -107.0
+offset_bottom = 858.0
+
+[node name="EntregaPalabra" parent="Almacen2" index="1"]
+offset_top = 372.0
+offset_bottom = 403.0
+text = "entregar ataq"
 
 [node name="Carriles" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(80, 80)
-offset_left = 59.0
-offset_top = 276.0
-offset_right = 967.0
-offset_bottom = 356.0
+offset_left = 453.0
+offset_top = 460.0
+offset_right = 1361.0
+offset_bottom = 841.0
 
 [node name="Carril1" parent="Carriles" instance=ExtResource("3_4htyv")]
 layout_mode = 2
@@ -26,56 +51,9 @@ layout_mode = 2
 [node name="Carril3" parent="Carriles" instance=ExtResource("3_4htyv")]
 layout_mode = 2
 
-[node name="containerVidas" type="HBoxContainer" parent="."]
-layout_direction = 2
-offset_left = 15.0
-offset_top = 518.445
-offset_right = 515.0
-offset_bottom = 638.445
-
-[node name="vida1" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-texture_disabled = ExtResource("4_s245b")
-stretch_mode = 0
-
-[node name="vida2" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-texture_disabled = ExtResource("4_s245b")
-stretch_mode = 0
-
-[node name="vida3" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-texture_disabled = ExtResource("4_s245b")
-stretch_mode = 0
-
-[node name="vida4" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-texture_disabled = ExtResource("4_s245b")
-stretch_mode = 0
-
-[node name="vida5" type="TextureButton" parent="containerVidas" groups=["CartaVidas"]]
-custom_minimum_size = Vector2(90, 0)
-layout_mode = 2
-texture_disabled = ExtResource("4_s245b")
-stretch_mode = 0
-
-[node name="EntregaVida" type="Button" parent="."]
-offset_left = 1010.0
-offset_top = 197.0
-offset_right = 1123.0
-offset_bottom = 317.0
-text = "Entregar Vida"
-
 [connection signal="envioPalabra" from="Almacen" to="." method="_on_almacen_envio_palabra"]
+[connection signal="envioPalabra" from="Almacen2" to="." method="_on_almacen_envio_palabra"]
 [connection signal="Slot_vida_pressed" from="Carriles/Carril1" to="." method="_on_carril_1_slot_vida_pressed"]
-[connection signal="child_exiting_tree" from="containerVidas" to="." method="_on_container_vidas_child_exiting_tree"]
-[connection signal="pressed" from="containerVidas/vida1" to="." method="_on_vida_1_pressed" binds= ["containerVidas/vida1"]]
-[connection signal="pressed" from="containerVidas/vida2" to="." method="_on_vida_2_pressed" binds= ["containerVidas/vida2"]]
-[connection signal="pressed" from="containerVidas/vida3" to="." method="_on_vida_3_pressed" binds= ["containerVidas/vida3"]]
-[connection signal="pressed" from="containerVidas/vida4" to="." method="_on_vida_4_pressed" binds= ["containerVidas/vida4"]]
-[connection signal="pressed" from="containerVidas/vida5" to="." method="_on_vida_5_pressed" binds= ["containerVidas/vida5"]]
-[connection signal="pressed" from="EntregaVida" to="." method="_on_entrega_vida_pressed"]
+
+[editable path="Almacen"]
+[editable path="Almacen2"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://dyysb0c81k6pu"]
+
+[ext_resource type="Script" path="res://CardSlot.gd" id="1_peonm"]
+[ext_resource type="Texture2D" uid="uid://c1yxl6aqb04ty" path="res://Assets/espacio vida.png" id="2_txv22"]
+
+[node name="CardSlot" type="MarginContainer"]
+custom_minimum_size = Vector2(90, 120)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 90.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_peonm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15, 0)
+texture = ExtResource("2_txv22")
+centered = false

@@ -8,7 +8,7 @@ enum EstadoSeleccionarCarta { SELECCIONADA, NOSELECCIONADA, DESHABILITADAS}
 enum EstadoRepartir { Estado1, Estado2 }
 var estadoRepartir = EstadoRepartir.Estado1
 var estadoSelCarta = EstadoSeleccionarCarta.NOSELECCIONADA
-var mazoP = [
+@export var mazoP = [
 	'Perro', 'Casa', 'Jardín', 'Montaña', 'Libro', 'Computadora',
 	'Felicidad', 'Playa', 'Viaje', 'Amistad', 'Guitarra', 'Café',
 	'Aventura', 'Arte', 'Tiempo', 'Sueño', 'Chocolate', 'Estrella',
@@ -17,6 +17,7 @@ var mazoP = [
 # Called when the node enters the scene tree for the first time.
 
 func _process(_delta):
+	$Mano.columns = $Mano.get_child_count() + 1
 	match estadoSelCarta:
 		EstadoSeleccionarCarta.SELECCIONADA:
 			for j in $Mano.get_children():
@@ -26,6 +27,10 @@ func _process(_delta):
 				else:
 					j.get_child(0).texture_normal = null
 					j.get_child(0).disabled = true
+			var cartasEnGrupo = get_tree().get_nodes_in_group("almacenes")
+			for carta in cartasEnGrupo:
+				if carta != self:
+					carta.estadoSelCarta = EstadoSeleccionarCarta.DESHABILITADAS
 			#el otro almacen deberia cambiar el estado a deshabilitadas
 		EstadoSeleccionarCarta.NOSELECCIONADA:
 			for j in $Mano.get_children():
@@ -45,11 +50,15 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func cambiar_no_seleccionada():
-	estadoSelCarta = EstadoSeleccionarCarta.NOSELECCIONADA
+	var cartasEnGrupo = get_tree().get_nodes_in_group("almacenes")
+	for carta in cartasEnGrupo:
+			carta.estadoSelCarta = EstadoSeleccionarCarta.NOSELECCIONADA
+	
 
 func _on_entrega_palabra_pressed():
-	var texture = preload("res://Assets/icono-de-ataque (Personalizado).png")
+	var texture = preload("res://Assets/corazon.svg")
 	var cartaNueva = pre_carta.instantiate()
+	cartaNueva.add_to_group("manoDeeCartasGrupo")
 	cartaNueva.get_child(0).get_node("Imagen").set_texture(texture)
 	cartaNueva.size.x = 90
 	cartaNueva.size.y = 10
@@ -63,9 +72,11 @@ func _on_botun_presed(asd):
 		if asd.estaSeleccionada:
 			asd.estaSeleccionada = false
 			estadoSelCarta = EstadoSeleccionarCarta.NOSELECCIONADA
+			var cartasEnGrupo = get_tree().get_nodes_in_group("almacenes")
+			for carta in cartasEnGrupo:
+				if carta != self:
+					carta.estadoSelCarta = EstadoSeleccionarCarta.NOSELECCIONADA
 		else:
 			asd.estaSeleccionada = true
 			estadoSelCarta = EstadoSeleccionarCarta.SELECCIONADA
 		
-
-

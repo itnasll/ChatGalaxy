@@ -1,4 +1,4 @@
-extends Node2D
+extends Control
 
 @export var vVida : int
 @export var vColor : Color = "green"
@@ -17,14 +17,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	$Vida.value = vVida
-	#$Vida.max_value = vVMax
+	$Vida.max_value = vVMax
 	var sb = StyleBoxFlat.new()
 	$Vida.add_theme_stylebox_override("fill", sb)
 	sb.bg_color = vColor
 
-	
 
-
-func _on_button_pressed():
-	vVida -=1 
-	

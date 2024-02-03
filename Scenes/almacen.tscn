@@ -11,7 +11,7 @@ offset_left = 490.0
 offset_top = 513.0
 offset_right = 1146.0
 offset_bottom = 641.0
-columns = 5
+columns = 6
 
 [node name="EntregaPalabra" type="Button" parent="."]
 offset_left = 992.0

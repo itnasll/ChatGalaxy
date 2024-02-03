@@ -15,9 +15,11 @@ texture_disabled = ExtResource("2_3mjrf")
 stretch_mode = 6
 
 [node name="Imagen" type="TextureRect" parent="Boton"]
+custom_minimum_size = Vector2(90, 0)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 90.0
+offset_bottom = 120.0
+expand_mode = 5
 
 [node name="Label" type="Label" parent="Boton"]
 layout_mode = 1
