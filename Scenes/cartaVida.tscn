@@ -1,25 +1,36 @@
-[gd_scene load_steps=3 format=3 uid="uid://de8rjhmu5qmhv"]
+[gd_scene load_steps=4 format=3 uid="uid://de8rjhmu5qmhv"]
 
 [ext_resource type="Script" path="res://Scripts/cartaVida.gd" id="1_lav3k"]
-[ext_resource type="Texture2D" uid="uid://db26mcb0u4kfs" path="res://Assets/red_Border.png" id="2_3mjrf"]
+[ext_resource type="Texture2D" uid="uid://db26mcb0u4kfs" path="res://Assets/Imagenes/red_Border.png" id="2_hmb8t"]
+[ext_resource type="Texture2D" uid="uid://c1yxl6aqb04ty" path="res://Assets/Imagenes/espacio vida.png" id="3_r8q2w"]
 
-[node name="CartaVida" type="CenterContainer"]
-scale = Vector2(2.18739, 1.48528)
+[node name="CartaVida" type="MarginContainer"]
+offset_right = 90.0
+offset_bottom = 120.0
+scale = Vector2(2.18739, 3.92528)
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
 script = ExtResource("1_lav3k")
 
 [node name="Boton" type="TextureButton" parent="."]
 clip_contents = true
 custom_minimum_size = Vector2(90, 120)
 layout_mode = 2
-texture_disabled = ExtResource("2_3mjrf")
+size_flags_stretch_ratio = 0.0
+auto_translate = false
+localize_numeral_system = false
+texture_disabled = ExtResource("2_hmb8t")
+ignore_texture_size = true
 stretch_mode = 6
 
 [node name="Imagen" type="TextureRect" parent="Boton"]
-custom_minimum_size = Vector2(90, 0)
 layout_mode = 0
-offset_right = 90.0
-offset_bottom = 120.0
-expand_mode = 5
+offset_right = 40.0
+offset_bottom = 56.0
+scale = Vector2(2, 2)
+texture = ExtResource("3_r8q2w")
 
 [node name="Label" type="Label" parent="Boton"]
 layout_mode = 1

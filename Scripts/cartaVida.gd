@@ -1,4 +1,4 @@
-extends CenterContainer
+extends MarginContainer
 signal enviaVida(argumento)
 signal enviaCarta(argumento)
 #crear una var @export para manejar el label que es la cantidad de vida

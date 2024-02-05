@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6glsa3352pur"]
+
+[ext_resource type="Script" path="res://Scenes/contenedor_de_carta.gd" id="1_mrcpt"]
+[ext_resource type="Texture2D" uid="uid://db26mcb0u4kfs" path="res://Assets/Imagenes/red_Border.png" id="2_cr4d1"]
+
+[node name="contenedor de carta" type="Control"]
+z_as_relative = false
+custom_minimum_size = Vector2(130, 200)
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -86.5
+offset_top = -110.0
+offset_right = 86.5
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource("1_mrcpt")
+
+[node name="BotonDeCarta" type="TextureButton" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_disabled = ExtResource("2_cr4d1")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

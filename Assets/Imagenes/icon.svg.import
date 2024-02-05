@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1smi3vvvrt1k"
-path="res://.godot/imported/corazon.svg-6b033f77f81a389125334ca549b4f80d.ctex"
+uid="uid://bvcofvvynfa4v"
+path="res://.godot/imported/icon.svg-bb4715eca2d384a4c2e395d5ac2bcd39.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/corazon.svg"
-dest_files=["res://.godot/imported/corazon.svg-6b033f77f81a389125334ca549b4f80d.ctex"]
+source_file="res://Assets/Imagenes/icon.svg"
+dest_files=["res://.godot/imported/icon.svg-bb4715eca2d384a4c2e395d5ac2bcd39.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmxgb6fjwppm6"
-path="res://.godot/imported/CardBase1.png-06a6a42360ecbd76c8ec1cf009344006.ctex"
+uid="uid://c3vkjp1rds7ho"
+path="res://.godot/imported/icono-de-ataque (Personalizado).png-8887d6eabd7c5fc75ab417980f87d584.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/CardBase1.png"
-dest_files=["res://.godot/imported/CardBase1.png-06a6a42360ecbd76c8ec1cf009344006.ctex"]
+source_file="res://Assets/Imagenes/icono-de-ataque (Personalizado).png"
+dest_files=["res://.godot/imported/icono-de-ataque (Personalizado).png-8887d6eabd7c5fc75ab417980f87d584.ctex"]
 
 [params]
 

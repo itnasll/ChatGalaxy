@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://8xu451k2aynl"]
+
+[ext_resource type="Script" path="res://menuMazo.gd" id="1_e231a"]
+
+[node name="MenuMazo" type="Node2D"]
+script = ExtResource("1_e231a")
+
+[node name="TabContainer" type="TabContainer" parent="."]
+offset_right = 891.0
+offset_bottom = 999.0
+tab_alignment = 1
+clip_tabs = false
+
+[node name="TabBar" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/TabBar"]
+layout_mode = 0
+offset_right = 889.0
+offset_bottom = 969.0
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/TabBar/ScrollContainer"]
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 2
+columns = 4
+
+[node name="TabBar2" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/TabBar2"]
+layout_mode = 0
+offset_right = 889.0
+offset_bottom = 969.0
+
+[node name="GridContainer" type="GridContainer" parent="TabContainer/TabBar2/ScrollContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 800)
+layout_mode = 2
+columns = 9

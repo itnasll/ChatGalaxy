@@ -56,7 +56,7 @@ func cambiar_no_seleccionada():
 	
 
 func _on_entrega_palabra_pressed():
-	var texture = preload("res://Assets/corazon.svg")
+	var texture = preload("res://Assets/Imagenes/corazon.svg")
 	var cartaNueva = pre_carta.instantiate()
 	cartaNueva.add_to_group("manoDeeCartasGrupo")
 	cartaNueva.get_child(0).get_node("Imagen").set_texture(texture)

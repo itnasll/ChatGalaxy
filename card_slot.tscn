@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dyysb0c81k6pu"]
 
 [ext_resource type="Script" path="res://CardSlot.gd" id="1_peonm"]
-[ext_resource type="Texture2D" uid="uid://c1yxl6aqb04ty" path="res://Assets/espacio vida.png" id="2_txv22"]
+[ext_resource type="Texture2D" uid="uid://c1yxl6aqb04ty" path="res://Assets/Imagenes/espacio vida.png" id="2_txv22"]
 
 [node name="CardSlot" type="MarginContainer"]
 custom_minimum_size = Vector2(90, 120)
