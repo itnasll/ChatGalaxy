@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://0lq6163gbafq"]
+
+[ext_resource type="Script" path="res://vista_mazo.gd" id="1_gshnp"]
+[ext_resource type="PackedScene" uid="uid://cbv3ju4td6mum" path="res://Scenes/una_carta_en_mazo.tscn" id="2_548tj"]
+
+[node name="VistaMazo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gshnp")
+
+[node name="Panel" type="ScrollContainer" parent="."]
+layout_mode = 0
+offset_right = 1210.0
+offset_bottom = 950.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+
+[node name="UnaCarta2" parent="Panel/VBoxContainer" instance=ExtResource("2_548tj")]
+layout_mode = 2

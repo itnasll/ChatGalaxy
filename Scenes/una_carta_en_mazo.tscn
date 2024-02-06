@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbv3ju4td6mum"]
+
+[ext_resource type="Script" path="res://Scenes/una_carta_en_mazo.gd" id="1_3ahuo"]
+[ext_resource type="PackedScene" uid="uid://b58p6mmcmvaej" path="res://Scenes/card.tscn" id="1_urhgw"]
+[ext_resource type="LabelSettings" uid="uid://da7nocihgdicl" path="res://new_label_settings.tres" id="2_pik8c"]
+[ext_resource type="FontFile" uid="uid://doduy6gec7ihi" path="res://Assets/Fuentes/LobsterTwo-Regular.ttf" id="3_orue3"]
+[ext_resource type="Texture2D" uid="uid://diw6puscbrnpd" path="res://Assets/Imagenes/menos(Personalizado).png" id="4_ox1pq"]
+[ext_resource type="Texture2D" uid="uid://bfk6xato24wml" path="res://Assets/Imagenes/mas (Personalizado).png" id="5_hkwyy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_k0out"]
+font = ExtResource("3_orue3")
+font_size = 50
+
+[node name="UnaCarta" type="HBoxContainer"]
+script = ExtResource("1_3ahuo")
+
+[node name="Panel" type="Panel" parent="."]
+custom_minimum_size = Vector2(150, 220)
+layout_mode = 2
+
+[node name="Card" parent="Panel" instance=ExtResource("1_urhgw")]
+position = Vector2(73, 110)
+
+[node name="Etiquetas" type="HSplitContainer" parent="."]
+layout_mode = 2
+split_offset = 2
+
+[node name="nombreCarta" type="Label" parent="Etiquetas"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "Labela asddasd asdasd"
+label_settings = ExtResource("2_pik8c")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+uppercase = true
+
+[node name="cantidad" type="Label" parent="Etiquetas"]
+custom_minimum_size = Vector2(66, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "1"
+label_settings = SubResource("LabelSettings_k0out")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Etiquetas2" type="HSplitContainer" parent="."]
+layout_mode = 2
+split_offset = 2
+
+[node name="lbl_tipo" type="Label" parent="Etiquetas2"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "Estelaris Confederados"
+label_settings = ExtResource("2_pik8c")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="lbl_clasificacion" type="Label" parent="Etiquetas2"]
+custom_minimum_size = Vector2(35, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "S"
+label_settings = SubResource("LabelSettings_k0out")
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Botones" type="HSplitContainer" parent="."]
+layout_mode = 2
+dragger_visibility = 1
+
+[node name="menos" type="Button" parent="Botones"]
+layout_mode = 2
+icon = ExtResource("4_ox1pq")
+
+[node name="mas" type="Button" parent="Botones"]
+layout_mode = 2
+icon = ExtResource("5_hkwyy")
+
+[connection signal="pressed" from="Botones/menos" to="." method="_on_menos_pressed"]
+[connection signal="pressed" from="Botones/mas" to="." method="_on_mas_pressed"]

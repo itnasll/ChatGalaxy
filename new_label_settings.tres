@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://da7nocihgdicl"]
+
+[ext_resource type="FontFile" uid="uid://vcdcpdgsfioy" path="res://Assets/Fuentes/Faster Stroker.otf" id="1_8pkpn"]
+
+[resource]
+font = ExtResource("1_8pkpn")
+font_size = 19
+outline_size = 1
+outline_color = Color(1, 1, 0.105882, 1)

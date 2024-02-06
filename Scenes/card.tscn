@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://b58p6mmcmvaej"]
 
-[ext_resource type="Resource" uid="uid://bj4eb2iyx76dl" path="res://Recursos/probando.res" id="2_24der"]
+[ext_resource type="Resource" uid="uid://bj4eb2iyx76dl" path="res://Recursos/probando.res" id="2_frryv"]
 [ext_resource type="Script" path="res://Card.gd" id="2_uocy0"]
 
 [node name="Card" type="Sprite2D" node_paths=PackedStringArray("Background", "Imagen", "Nombre", "Valor", "Descripcion")]
@@ -8,7 +8,7 @@ z_as_relative = false
 position = Vector2(69, 104)
 scale = Vector2(0.0975653, 0.0975653)
 script = ExtResource("2_uocy0")
-Card = ExtResource("2_24der")
+Card = ExtResource("2_frryv")
 Background = NodePath(".")
 Imagen = NodePath("Imagen")
 Nombre = NodePath("Nombre")

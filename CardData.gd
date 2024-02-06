@@ -33,3 +33,4 @@ enum Clases{
 	Orden_de_Orion,
 	Federación_Nebular
 }
+
