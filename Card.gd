@@ -17,6 +17,9 @@ const clas = preload("res://CardData.gd")
 @export var clasificacion : clas.Clasificacion
 @export var tipo : clas.Clases
 
+@export var is_selected : bool = false
+
+#cambiar a init...
 func cargar_data():
 	Background.texture = Card.base
 	Imagen.texture = Card.imagen

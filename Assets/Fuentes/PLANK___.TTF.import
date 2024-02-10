@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://gc7nht6wvijx"
-path="res://.godot/imported/PLANK___.TTF-ec317edb899aca75eb42fec0d562c7f2.fontdata"
+path="res://godot/imported/PLANK___.TTF-ec317edb899aca75eb42fec0d562c7f2.fontdata"
 
 [deps]
 
 source_file="res://Assets/Fuentes/PLANK___.TTF"
-dest_files=["res://.godot/imported/PLANK___.TTF-ec317edb899aca75eb42fec0d562c7f2.fontdata"]
+dest_files=["res://godot/imported/PLANK___.TTF-ec317edb899aca75eb42fec0d562c7f2.fontdata"]
 
 [params]
 

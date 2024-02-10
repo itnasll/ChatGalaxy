@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1yxl6aqb04ty"
-path="res://.godot/imported/espacio vida.png-eb3e7e7d0c448b580ac1d32640e98c35.ctex"
+path="res://godot/imported/espacio vida.png-eb3e7e7d0c448b580ac1d32640e98c35.ctex"
 metadata={
 "vram_texture": false
 }
@@ -11,7 +11,7 @@ metadata={
 [deps]
 
 source_file="res://Assets/Imagenes/espacio vida.png"
-dest_files=["res://.godot/imported/espacio vida.png-eb3e7e7d0c448b580ac1d32640e98c35.ctex"]
+dest_files=["res://godot/imported/espacio vida.png-eb3e7e7d0c448b580ac1d32640e98c35.ctex"]
 
 [params]
 

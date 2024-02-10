@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=3 uid="uid://0lq6163gbafq"]
+
+[ext_resource type="Script" path="res://vista_mazo.gd" id="1_gshnp"]
+[ext_resource type="FontFile" uid="uid://vcdcpdgsfioy" path="res://Assets/Fuentes/Faster Stroker.otf" id="2_1nd3t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a5f35"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_p6u82"]
+line_spacing = 6.0
+font = ExtResource("2_1nd3t")
+font_size = 30
+
+[node name="VistaMazo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gshnp")
+
+[node name="VistaMazos" type="TabContainer" parent="."]
+layout_mode = 0
+offset_top = 10.0
+offset_right = 600.0
+offset_bottom = 960.0
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("2_1nd3t")
+theme_override_font_sizes/font_size = 20
+tab_alignment = 1
+
+[node name="nuevo mazo" type="GridContainer" parent="VistaMazos"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VistaMazos/nuevo mazo"]
+custom_minimum_size = Vector2(0, 80)
+layout_direction = 1
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_a5f35")
+
+[node name="Lbl_NombreDelMazo" type="Label" parent="VistaMazos/nuevo mazo"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Nombre del Mazo:
+"
+label_settings = SubResource("LabelSettings_p6u82")
+
+[node name="NombreDelMazo" type="LineEdit" parent="VistaMazos/nuevo mazo"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1nd3t")
+theme_override_font_sizes/font_size = 30
+
+[node name="CrearMazo" type="Button" parent="VistaMazos/nuevo mazo"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_1nd3t")
+theme_override_font_sizes/font_size = 25
+text = "Crear Mazo"
+
+[node name="BotonGuardarMazo" type="Button" parent="."]
+layout_mode = 2
+offset_left = 156.0
+offset_top = 926.0
+offset_right = 387.0
+offset_bottom = 989.0
+theme_override_colors/font_color = Color(0.92549, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("2_1nd3t")
+theme_override_font_sizes/font_size = 44
+text = "Guardar"
+
+[node name="EliminarMazo" type="Button" parent="."]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 960.0
+offset_right = 600.0
+offset_bottom = 997.0
+theme_override_fonts/font = ExtResource("2_1nd3t")
+theme_override_font_sizes/font_size = 23
+text = "Eliminar"
+
+[node name="AcceptDialog" type="AcceptDialog" parent="."]
+initial_position = 1
+
+[connection signal="pressed" from="VistaMazos/nuevo mazo/CrearMazo" to="." method="_on_crear_mazo_pressed"]
+[connection signal="pressed" from="BotonGuardarMazo" to="." method="_on_boton_guardar_mazo_pressed"]
+[connection signal="pressed" from="EliminarMazo" to="." method="_on_eliminar_mazo_pressed"]

@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://u1r3qsyvbvcj"]
+
+[ext_resource type="FontFile" uid="uid://vcdcpdgsfioy" path="res://Assets/Fuentes/Faster Stroker.otf" id="1_62g5m"]
+
+[resource]
+default_font = ExtResource("1_62g5m")
+TabBar/font_sizes/font_size = 20
+TabBar/fonts/font = ExtResource("1_62g5m")

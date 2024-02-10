@@ -34,7 +34,6 @@ func _on_mouse_exited():
 
 
 func _on_boton_de_carta_pressed():
-	print("kakak")
 	emit_signal("CartaPresionada",self)
 	pass # Replace with function body.
 

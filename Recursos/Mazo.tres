@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Mazo" load_steps=2 format=3 uid="uid://bawn66khkq058"]
+
+[ext_resource type="Script" path="res://Mazo.gd" id="1_mn5d7"]
+
+[resource]
+script = ExtResource("1_mn5d7")
+mazos = {
+"default": [["carlost", 5], ["probando", 3]]
+}

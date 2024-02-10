@@ -22,7 +22,7 @@ func _process(_delta):
 		EstadoSeleccionarCarta.SELECCIONADA:
 			for j in $Mano.get_children():
 				if j.estaSeleccionada:
-					var mi_textura = load("res://Assets/Gold_Border.png")
+					var mi_textura = load("res://Assets/Imagenes/Gold_Border.png")
 					j.get_child(0).set_texture_normal(mi_textura)
 				else:
 					j.get_child(0).texture_normal = null

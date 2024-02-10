@@ -1,0 +1,92 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfnqfowk7xra5"]
+
+[ext_resource type="FontFile" uid="uid://vcdcpdgsfioy" path="res://Assets/Fuentes/Faster Stroker.otf" id="1_x3fbm"]
+[ext_resource type="Theme" uid="uid://u1r3qsyvbvcj" path="res://new_theme.tres" id="2_0dakj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfngx"]
+bg_color = Color(1, 0.333333, 0.352941, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.8, 0.8, 0.384314, 1)
+corner_radius_top_left = 22
+corner_radius_top_right = 22
+corner_radius_bottom_right = 22
+corner_radius_bottom_left = 22
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_54374"]
+bg_color = Color(0.133333, 0.133333, 0.133333, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="Theme" id="Theme_45qxs"]
+Button/font_sizes/font_size = 50
+Button/fonts/font = ExtResource("1_x3fbm")
+Button/styles/hover = SubResource("StyleBoxFlat_qfngx")
+Button/styles/normal = SubResource("StyleBoxFlat_54374")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_vertical_guides_ = [504.0]
+
+[node name="Jugar" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 224.0
+offset_right = 497.0
+offset_bottom = 294.0
+theme = SubResource("Theme_45qxs")
+text = "Iniciar pArtida
+"
+
+[node name="Coleccion" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 376.0
+offset_right = 497.0
+offset_bottom = 446.0
+theme = SubResource("Theme_45qxs")
+text = "Mi Coleccion
+"
+
+[node name="Misiones" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 512.0
+offset_right = 496.0
+offset_bottom = 582.0
+theme = SubResource("Theme_45qxs")
+text = "Misiones
+"
+
+[node name="Salir" type="Button" parent="."]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 688.0
+offset_right = 497.0
+offset_bottom = 758.0
+theme = SubResource("Theme_45qxs")
+text = "Salir
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 728.0
+offset_top = 48.0
+offset_right = 1176.0
+offset_bottom = 160.0
+theme = ExtResource("2_0dakj")
+theme_override_font_sizes/normal_font_size = 80
+text = "Galaxia"

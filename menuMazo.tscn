@@ -1,15 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://8xu451k2aynl"]
 
 [ext_resource type="Script" path="res://menuMazo.gd" id="1_e231a"]
+[ext_resource type="Theme" uid="uid://u1r3qsyvbvcj" path="res://new_theme.tres" id="2_klk6t"]
+[ext_resource type="PackedScene" uid="uid://0lq6163gbafq" path="res://vistamazo.tscn" id="2_nd6i0"]
 [ext_resource type="PackedScene" uid="uid://c6glsa3352pur" path="res://Scenes/contenedor_de_carta.tscn" id="2_rqkn1"]
 [ext_resource type="FontFile" uid="uid://vcdcpdgsfioy" path="res://Assets/Fuentes/Faster Stroker.otf" id="3_6s6ro"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e00s4"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_bppii"]
-line_spacing = 6.0
-font = ExtResource("3_6s6ro")
-font_size = 30
 
 [node name="MenuMazo" type="Node2D"]
 script = ExtResource("1_e231a")
@@ -17,36 +12,47 @@ script = ExtResource("1_e231a")
 [node name="TabContainer" type="TabContainer" parent="."]
 offset_right = 891.0
 offset_bottom = 999.0
+theme_override_fonts/font = ExtResource("3_6s6ro")
+theme_override_font_sizes/font_size = 22
 tab_alignment = 1
 clip_tabs = false
 
-[node name="TabBar" type="TabBar" parent="TabContainer"]
+[node name="Naves" type="TabBar" parent="TabContainer"]
 layout_mode = 2
+theme = ExtResource("2_klk6t")
+theme_override_fonts/font = ExtResource("3_6s6ro")
+theme_override_font_sizes/font_size = 20
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/TabBar"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Naves"]
 layout_mode = 0
 offset_right = 889.0
 offset_bottom = 969.0
 
-[node name="GridContainer" type="GridContainer" parent="TabContainer/TabBar/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Naves/ScrollContainer"]
 custom_minimum_size = Vector2(0, 800)
 layout_mode = 2
 columns = 4
 
-[node name="TabBar2" type="TabBar" parent="TabContainer"]
+[node name="Disparos" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/TabBar2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Disparos"]
 layout_mode = 0
 offset_right = 889.0
 offset_bottom = 969.0
 
-[node name="GridContainer" type="GridContainer" parent="TabContainer/TabBar2/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="TabContainer/Disparos/ScrollContainer"]
 clip_contents = true
 custom_minimum_size = Vector2(0, 800)
 layout_mode = 2
 columns = 9
+
+[node name="VistaMazo" parent="." instance=ExtResource("2_nd6i0")]
+offset_left = 1286.0
+offset_top = 6.0
+offset_right = 1286.0
+offset_bottom = 6.0
 
 [node name="contenedor de carta central" parent="." instance=ExtResource("2_rqkn1")]
 offset_left = 968.0
@@ -54,53 +60,6 @@ offset_top = 100.0
 offset_right = 1141.0
 offset_bottom = 320.0
 scale = Vector2(1.5, 1.5)
-
-[node name="VistaMazos" type="TabContainer" parent="."]
-offset_left = 1300.0
-offset_top = 10.0
-offset_right = 1900.0
-offset_bottom = 960.0
-size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("3_6s6ro")
-
-[node name="nuevo mazo" type="GridContainer" parent="VistaMazos"]
-layout_mode = 2
-
-[node name="Panel" type="Panel" parent="VistaMazos/nuevo mazo"]
-custom_minimum_size = Vector2(0, 80)
-layout_direction = 1
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_e00s4")
-
-[node name="Lbl_NombreDelMazo" type="Label" parent="VistaMazos/nuevo mazo"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Nombre del Mazo:
-"
-label_settings = SubResource("LabelSettings_bppii")
-
-[node name="NombreDelMazo" type="LineEdit" parent="VistaMazos/nuevo mazo"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_6s6ro")
-theme_override_font_sizes/font_size = 30
-
-[node name="CrearMazo" type="Button" parent="VistaMazos/nuevo mazo"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("3_6s6ro")
-theme_override_font_sizes/font_size = 25
-text = "Crear Mazo"
-
-[node name="BotonGuardarMazo" type="Button" parent="."]
-offset_left = 1471.0
-offset_top = 917.0
-offset_right = 1751.0
-offset_bottom = 999.0
-theme_override_colors/font_color = Color(0.92549, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
-theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("3_6s6ro")
-theme_override_font_sizes/font_size = 44
-text = "Guardar"
 
 [node name="BotonAgregarAlMazo" type="Button" parent="."]
 offset_left = 959.0
@@ -139,4 +98,4 @@ theme_override_fonts/font = ExtResource("3_6s6ro")
 theme_override_font_sizes/font_size = 44
 text = "Jugar"
 
-[connection signal="pressed" from="VistaMazos/nuevo mazo/CrearMazo" to="." method="_on_crear_mazo_pressed"]
+[connection signal="pressed" from="BotonAgregarAlMazo" to="." method="_on_boton_agregar_al_mazo_pressed"]
