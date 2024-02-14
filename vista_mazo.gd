@@ -5,14 +5,12 @@ var tabmazo = preload("res://Scenes/Tab-mazo.tscn")
 @onready var mazosss = rec_mazos.cargar_mazos()
 
 func _ready():
-	print(mazosss)
-	print(rec_mazos.mazos)
 	for mazo in mazosss:
 		var newMazo = tabmazo.instantiate()
 		newMazo.name = mazo
 		$VistaMazos.add_child(newMazo)
 		for cartas in mazosss[mazo]:
-			var carta = load("res://Recursos/"+cartas[0]+".res")
+			var carta = load("res://Recursos/"+cartas[0].to_lower()+".res")
 			var vistaCarta = preload("res://Scenes/una_carta_en_mazo.tscn").instantiate()
 			vistaCarta.carta_rec = carta
 			vistaCarta.cantidad = cartas[1]

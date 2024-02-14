@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfnqfowk7xra5"]
+[gd_scene load_steps=8 format=3 uid="uid://dfnqfowk7xra5"]
 
+[ext_resource type="Script" path="res://Scenes/Menu_principal.gd" id="1_4opkj"]
 [ext_resource type="FontFile" uid="uid://vcdcpdgsfioy" path="res://Assets/Fuentes/Faster Stroker.otf" id="1_x3fbm"]
 [ext_resource type="Theme" uid="uid://u1r3qsyvbvcj" path="res://new_theme.tres" id="2_0dakj"]
+[ext_resource type="PackedScene" uid="uid://d6qbqejc6fs8" path="res://Scenes/selector_de_mazo.tscn" id="4_vx4rs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfngx"]
 bg_color = Color(1, 0.333333, 0.352941, 1)
@@ -39,6 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_4opkj")
 metadata/_edit_vertical_guides_ = [504.0]
 
 [node name="Jugar" type="Button" parent="."]
@@ -62,6 +65,7 @@ text = "Mi Coleccion
 "
 
 [node name="Misiones" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 64.0
 offset_top = 512.0
@@ -90,3 +94,13 @@ offset_bottom = 160.0
 theme = ExtResource("2_0dakj")
 theme_override_font_sizes/normal_font_size = 80
 text = "Galaxia"
+
+[node name="selector de mazo" parent="." instance=ExtResource("4_vx4rs")]
+layout_mode = 1
+offset_left = 560.0
+offset_top = -20.0
+offset_right = 560.0
+offset_bottom = -20.0
+
+[connection signal="pressed" from="Coleccion" to="." method="_on_coleccion_pressed"]
+[connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]

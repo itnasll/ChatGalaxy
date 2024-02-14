@@ -99,3 +99,4 @@ theme_override_font_sizes/font_size = 44
 text = "Jugar"
 
 [connection signal="pressed" from="BotonAgregarAlMazo" to="." method="_on_boton_agregar_al_mazo_pressed"]
+[connection signal="pressed" from="BotonVolverAlMenu" to="." method="_on_boton_volver_al_menu_pressed"]

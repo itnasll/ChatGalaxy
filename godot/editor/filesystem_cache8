@@ -1,27 +1,31 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1707594523
-Card.gd::GDScript::-1::1707262301::0::1::::<>Sprite2D<>::
+::res://::1707878123
+Card.gd::GDScript::-1::1707596099::0::1::::<>Sprite2D<>::
 CardData.gd::GDScript::-1::1707260984::0::1::::CardData<>Resource<>::
 CardSlot.gd::GDScript::-1::1706900966::0::1::::<>MarginContainer<>::
 card_slot.tscn::PackedScene::8894435373861121822::1707081351::0::1::::<><>::res://CardSlot.gd<>uid://c1yxl6aqb04ty
 Mazo.gd::GDScript::-1::1707505434::0::1::::Mazo<>Resource<>::
-menuMazo.gd::GDScript::-1::1707493114::0::1::::<>Node2D<>::
-menuMazo.tscn::PackedScene::2364980272632897429::1707519718::0::1::::<><>::res://menuMazo.gd<>uid://0lq6163gbafq::::res://vistamazo.tscn<>uid://c6glsa3352pur::::res://Scenes/contenedor_de_carta.tscn<>uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf
+menuMazo.gd::GDScript::-1::1707762614::0::1::::<>Node2D<>::
+menuMazo.tscn::PackedScene::2364980272632897429::1707783413::0::1::::<><>::res://menuMazo.gd<>uid://u1r3qsyvbvcj::::res://new_theme.tres<>uid://0lq6163gbafq::::res://vistamazo.tscn<>uid://c6glsa3352pur::::res://Scenes/contenedor_de_carta.tscn<>uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf
 new_label_settings.tres::LabelSettings::7226136578961177415::1707360694::0::1::::<><>::uid://vcdcpdgsfioy
-vistamazo.tscn::PackedScene::1778457492517072354::1707519718::0::1::::<><>::res://vista_mazo.gd<>uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf
-vista_mazo.gd::GDScript::-1::1707519757::0::1::::<>Control<>::
+new_theme.tres::Theme::1458533754771227513::1707779486::0::1::::<><>::uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf
+selector de mazo.gd::GDScript::-1::1707783377::0::1::::<>Control<>::
+vistamazo.tscn::PackedScene::1778457492517072354::1707783413::0::1::::<><>::res://vista_mazo.gd<>uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf
+vista_mazo.gd::GDScript::-1::1707783413::0::1::::<>Control<>::
 ::res://Assets/::1707081351
 ::res://Assets/Fuentes/::1707361739
 Faster Stroker.otf::FontFile::1478280987254447068::1666545004::1707361739::1::::<><>::
 LobsterTwo-Regular.ttf::FontFile::8149357831861345206::1696616380::1707361739::1::::<><>::
 PLANK___.TTF::FontFile::427228374879071761::894837000::1707361739::1::::<><>::
 readme.txt::TextFile::-1::894837000::0::1::::<><>::
-::res://Assets/Imagenes/::1707361742
+::res://Assets/Imagenes/::1707776750
 CardBase1.png::CompressedTexture2D::8049376587216372395::1697913019::1707361741::1::::<><>::
 corazon.svg::CompressedTexture2D::9022075179583252610::1706383617::1707361741::1::::<><>::
 ejemplo_1.png::CompressedTexture2D::4715355440241504798::1696615220::1707361742::1::::<><>::
 ejemplo_2.png::CompressedTexture2D::3472795474647638261::1696619440::1707361741::1::::<><>::
 espacio vida.png::CompressedTexture2D::6648714131592235626::1706825583::1707361741::1::::<><>::
+FLECHA2.png::CompressedTexture2D::8827997417260318222::1707776747::1707776750::1::::<><>::
+FLECHA.png::CompressedTexture2D::8535037607135989840::1707776610::1707776619::1::::<><>::
 Gold_Border.png::CompressedTexture2D::56435380169572328::1706383617::1707361741::1::::<><>::
 icon.svg::CompressedTexture2D::3865375259007421479::1706383617::1707361741::1::::<><>::
 icono-de-ataque (Personalizado).png::CompressedTexture2D::6782104992951495772::1706648634::1707361741::1::::<><>::
@@ -39,27 +43,30 @@ _2c603ed6-fdda-4d30-be4e-4d065b456367.jpeg::CompressedTexture2D::463338558184830
 _7f904c8b-8693-48bd-b186-f94bbadec9a4.jpeg::CompressedTexture2D::7771317538824709157::1707072134::1707361740::1::::<><>::
 _f90b4f6e-6639-4c8c-a0a4-6288b807b2ad.jpeg::CompressedTexture2D::3745208840242729239::1707072156::1707361740::1::::<><>::
 _f9574666-480e-4f54-9054-10c9871b4022.jpeg::CompressedTexture2D::6042923360676185551::1707072145::1707361740::1::::<><>::
-::res://Recursos/::1707505434
+::res://Recursos/::1707782375
 carlost.res::Resource/Resource::2613995546851613602::1707336311::0::1::::<><>::res://CardData.gd<>uid://bppys0ve06mns
-Mazo.tres::Resource/Mazo::2432683318803400705::1707505434::0::1::::<><>::res://Mazo.gd
-probando.res::Resource/Resource::3078233316679465565::1707438083::0::1::::<><>::res://CardData.gd<>uid://bppys0ve06mns
-::res://Scenes/::1707519718
+Mazo.tres::Resource/Resource::2432683318803400705::1707505434::0::1::::<><>::res://Mazo.gd
+probando.res::Resource/CardData::3078233316679465565::1707782375::0::1::::<><>::res://CardData.gd<>uid://bliaru4o4l0y8::::res://Assets/Imagenes/OIG2.jpeg<>uid://b8gfhk0ncwadi::::res://Assets/Imagenes/ejemplo_1.png
+::res://Scenes/::1707783413
 almacen.tscn::PackedScene::3505258680855328733::1707250497::0::1::::<><>::res://Scripts/almacen.gd
 AreaCartaVida.gd::GDScript::-1::1706898581::0::1::::<>MarginContainer<>::
 Button_Scene.tscn::PackedScene::8420324151975370585::1706383617::0::1::::<><>::
-card.tscn::PackedScene::4561177222146181049::1707506130::0::1::::<><>::uid://bj4eb2iyx76dl::::res://Recursos/probando.res<>res://Card.gd
+card.tscn::PackedScene::4561177222146181049::1707776964::0::1::::<><>::uid://bj4eb2iyx76dl
 carril.tscn::PackedScene::4870182456426205475::1706978253::0::1::::<><>::uid://bmktppmuuylsa
 carril_enemigo.tscn::PackedScene::7769967343860628168::1707250497::0::1::::<><>::uid://bmktppmuuylsa
 cartaVida.tscn::PackedScene::7509190539688124819::1707250496::0::1::::<><>::res://Scripts/cartaVida.gd<>uid://db26mcb0u4kfs
 contenedor_de_carta.gd::GDScript::-1::1707437210::0::1::::<>Control<>::
-contenedor_de_carta.tscn::PackedScene::6961781862468168749::1707506130::0::1::::<><>::res://Scenes/contenedor_de_carta.gd<>uid://db26mcb0u4kfs::::res://Assets/Imagenes/red_Border.png
+contenedor_de_carta.tscn::PackedScene::6961781862468168749::1707776964::0::1::::<><>::res://Scenes/contenedor_de_carta.gd<>uid://db26mcb0u4kfs
 Control.gd::GDScript::-1::1706828480::0::1::::<>Control<>::
 main.tscn::PackedScene::6045693592178218706::1706816936::0::1::::<><>::res://Scripts/Main.gd<>uid://bmktppmuuylsa
+Menu_principal.gd::GDScript::-1::1707783044::0::1::::<>Control<>::
+Menu_principal.tscn::PackedScene::7538024350736669914::1707783413::0::1::::<><>::res://Scenes/Menu_principal.gd<>uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf<>uid://u1r3qsyvbvcj::::res://new_theme.tres<>uid://d6qbqejc6fs8::::res://Scenes/selector_de_mazo.tscn
 palabra.tscn::PackedScene::3763961394758631618::1707081351::0::1::::<><>::uid://bvcofvvynfa4v
-screen_jugador.tscn::PackedScene::6786326082658673091::1707519718::0::1::::<><>::res://Scripts/screen_jugador.gd<>uid://bp68dlxrj27if::::res://Scenes/almacen.tscn<>uid://c48eyfmc0kln8::::res://Scenes/vista_enemigo.tscn<>uid://cbnfgtx508iop::::res://Scenes/carril.tscn
-Tab-mazo.tscn::PackedScene::4518030257332459205::1707519718::0::1::::<><>::res://Scripts/Tab-mazo.gd
-una_carta_en_mazo.gd::GDScript::-1::1707336311::0::1::::<>HBoxContainer<>::
-una_carta_en_mazo.tscn::PackedScene::4888099387936940844::1707519718::0::1::::<><>::res://Scenes/una_carta_en_mazo.gd<>uid://b58p6mmcmvaej::::res://Scenes/card.tscn<>uid://da7nocihgdicl::::res://new_label_settings.tres<>uid://doduy6gec7ihi::::res://Assets/Fuentes/LobsterTwo-Regular.ttf<>uid://diw6puscbrnpd::::res://Assets/Imagenes/menos(Personalizado).png<>uid://bfk6xato24wml::::res://Assets/Imagenes/mas (Personalizado).png
+screen_jugador.tscn::PackedScene::6786326082658673091::1707783413::0::1::::<><>::res://Scripts/screen_jugador.gd<>uid://bp68dlxrj27if::::res://Scenes/almacen.tscn<>uid://c48eyfmc0kln8::::res://Scenes/vista_enemigo.tscn<>uid://cbnfgtx508iop::::res://Scenes/carril.tscn
+selector_de_mazo.tscn::PackedScene::275536345933754833::1707783413::0::1::::<><>::res://selector de mazo.gd<>uid://dx1l3e1737us1::::res://Assets/Imagenes/FLECHA2.png<>uid://u1r3qsyvbvcj::::res://new_theme.tres<>uid://dtuo27x2kwtpw::::res://Assets/Imagenes/FLECHA.png<>uid://b58p6mmcmvaej::::res://Scenes/card.tscn
+Tab-mazo.tscn::PackedScene::4518030257332459205::1707783412::0::1::::<><>::res://Scripts/Tab-mazo.gd
+una_carta_en_mazo.gd::GDScript::-1::1707596549::0::1::::<>HBoxContainer<>::
+una_carta_en_mazo.tscn::PackedScene::4888099387936940844::1707783413::0::1::::<><>::res://Scenes/una_carta_en_mazo.gd<>uid://b58p6mmcmvaej::::res://Scenes/card.tscn<>uid://da7nocihgdicl::::res://new_label_settings.tres<>uid://doduy6gec7ihi::::res://Assets/Fuentes/LobsterTwo-Regular.ttf<>uid://diw6puscbrnpd::::res://Assets/Imagenes/menos(Personalizado).png<>uid://bfk6xato24wml::::res://Assets/Imagenes/mas (Personalizado).png
 vida.tscn::PackedScene::3250511801985520656::1706978253::0::1::::<><>::res://Scripts/vida.gd
 vista_enemigo.tscn::PackedScene::6876728307076986407::1706978253::0::1::::<><>::uid://dix3hyl6m3h4s
 ::res://Scripts/::1707512128

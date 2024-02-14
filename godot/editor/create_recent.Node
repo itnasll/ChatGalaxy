@@ -1,5 +1,11 @@
-RichTextLabel
+VBoxContainer
+CenterContainer
+Container
+Label
 Button
+HBoxContainer
+Control
+RichTextLabel
 MenuButton
 AcceptDialog
 ConfirmationDialog

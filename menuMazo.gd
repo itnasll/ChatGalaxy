@@ -53,3 +53,7 @@ func _on_boton_agregar_al_mazo_pressed():
 		mazo_sel.nueva_carta("res://Recursos/"+nombre_rec+".res")
 	#limpiar carta seleccionada y deseleccionar en tabcontainer
 	pass # Replace with function body.
+
+
+func _on_boton_volver_al_menu_pressed():
+	get_tree().change_scene_to_file("res://Scenes/Menu_principal.tscn")
