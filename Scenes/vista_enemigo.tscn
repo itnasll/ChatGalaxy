@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://c48eyfmc0kln8"]
+[gd_scene load_steps=3 format=3 uid="uid://c48eyfmc0kln8"]
 
 [ext_resource type="PackedScene" uid="uid://dix3hyl6m3h4s" path="res://Scenes/carril_enemigo.tscn" id="1_2jet0"]
+[ext_resource type="Script" path="res://Scenes/vista_enemigo.gd" id="1_f511g"]
 
 [node name="vistaEnemigo" type="Node2D"]
 position = Vector2(108, 46)
+script = ExtResource("1_f511g")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 anchors_preset = 5

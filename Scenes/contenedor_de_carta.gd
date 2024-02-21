@@ -2,6 +2,13 @@ extends Control
 signal CartaPresionada( asd )
 @onready var pre_carta = preload("res://Scenes/card.tscn")
 
+
+
+
+
+
+
+
 @export var estaSeleccionada: bool = false
 var goldBorder =preload("res://Assets/Imagenes/Gold_Border.png")
 var original_scale = Vector2(1, 1)

@@ -2,6 +2,7 @@ extends Resource
 class_name Mazo
 
 const SAVE_MAZO_PATH := "user://save_mazo.tres"
+
 @export var mazos ={ 
 	"default" :[
 		["carlost", 5],
@@ -26,6 +27,13 @@ func guardar_mazos():
 	
 func cargar_mazos():
 	var archivo_leer = FileAccess.open(SAVE_MAZO_PATH, FileAccess.READ)
+	#si no existe crealo
+	if archivo_leer == null :
+		var archivo_guardar = FileAccess.open(SAVE_MAZO_PATH, FileAccess.WRITE_READ)
+		var json_string = JSON.stringify(mazos)
+		archivo_guardar.store_line(json_string)
+		archivo_leer = FileAccess.open(SAVE_MAZO_PATH, FileAccess.READ)
+		
 	var contenido = archivo_leer.get_line()
 	var json = JSON.new()
 	var _parse_result = json.parse(contenido)

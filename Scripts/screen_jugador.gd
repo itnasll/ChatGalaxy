@@ -44,31 +44,31 @@ func _on_fin_turno_pressed():
 func jugadaEnemiga(numero, texto):
 	match numero:
 		"1":
-			var ubicacion = $vistaEnemigo.get_child(0).get_child(0).get_child(0).get_child(1)
+			var ubicacion = $vistaEnemigo.carril1.cartaNave
 			ubicacion.poner_carta(texto)
 			var vida = ubicacion.get_child(0).Valor.text
-			$vistaEnemigo.get_child(0).get_child(0).get_child(0).get_child(0).vVMax = int(vida)
-			$vistaEnemigo.get_child(0).get_child(0).get_child(0).get_child(0).vVida = int(vida)
+			$vistaEnemigo.carril1.barraVida.vVMax = int(vida)
+			$vistaEnemigo.carril1.barraVida.vVida = int(vida)
 		"2":
-			var ubicacion = $vistaEnemigo.get_child(0).get_child(1).get_child(0).get_child(1)
+			var ubicacion = $vistaEnemigo.carril2.cartaNave
 			ubicacion.poner_carta(texto)
 			var vida = ubicacion.get_child(0).Valor.text
-			$vistaEnemigo.get_child(0).get_child(0).get_child(0).get_child(0).vVMax = int(vida)
-			$vistaEnemigo.get_child(0).get_child(0).get_child(0).get_child(0).vVida = int(vida)
+			$vistaEnemigo.carril2.barraVida.vVMax = int(vida)
+			$vistaEnemigo.carril2.barraVida.vVida = int(vida)
 		"3":
-			var ubicacion = $vistaEnemigo.get_child(0).get_child(2).get_child(0).get_child(1)
+			var ubicacion = $vistaEnemigo.carril3.cartaNave
 			ubicacion.poner_carta(texto)
 			var vida = ubicacion.get_child(0).Valor.text
-			$vistaEnemigo.get_child(0).get_child(0).get_child(0).get_child(0).vVMax = int(vida)
-			$vistaEnemigo.get_child(0).get_child(0).get_child(0).get_child(0).vVida = int(vida)
+			$vistaEnemigo.carril3.barraVida.vVMax = int(vida)
+			$vistaEnemigo.carril3.barraVida.vVida = int(vida)
 		"4":
-			var ubicacion = $vistaEnemigo.get_child(0).get_child(0).get_child(0).get_child(2)
+			var ubicacion = $vistaEnemigo.carril1.cartaDisparo
 			ubicacion.poner_carta(texto)
 		"5":
-			var ubicacion = $vistaEnemigo.get_child(0).get_child(1).get_child(0).get_child(2)
+			var ubicacion = $vistaEnemigo.carril2.cartaDisparo
 			ubicacion.poner_carta(texto)
 		"6":
-			var ubicacion = $vistaEnemigo.get_child(0).get_child(2).get_child(0).get_child(2)
+			var ubicacion = $vistaEnemigo.carril3.cartaDisparo
 			ubicacion.poner_carta(texto)
 
 """a las 3 funciones agregarle un comando para deshabilitar todo"""

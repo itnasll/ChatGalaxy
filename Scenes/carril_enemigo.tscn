@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://dix3hyl6m3h4s"]
+[gd_scene load_steps=6 format=3 uid="uid://dix3hyl6m3h4s"]
 
+[ext_resource type="Script" path="res://Scenes/carril_enemigo.gd" id="1_8oxl8"]
 [ext_resource type="PackedScene" uid="uid://bmktppmuuylsa" path="res://Scenes/vida.tscn" id="1_fubbb"]
 [ext_resource type="PackedScene" uid="uid://c6glsa3352pur" path="res://Scenes/contenedor_de_carta.tscn" id="2_4okla"]
 [ext_resource type="Texture2D" uid="uid://c43j3ip6403i" path="res://Assets/Imagenes/cartavacia-vida (Personalizado).png" id="3_v2gqy"]
@@ -12,6 +13,7 @@ anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 grow_horizontal = 2
+script = ExtResource("1_8oxl8")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
