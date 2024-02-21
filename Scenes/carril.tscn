@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cbnfgtx508iop"]
+[gd_scene load_steps=6 format=3 uid="uid://cbnfgtx508iop"]
 
 [ext_resource type="PackedScene" uid="uid://bmktppmuuylsa" path="res://Scenes/vida.tscn" id="1_qfgep"]
 [ext_resource type="Script" path="res://Scripts/carril.gd" id="1_r5mwn"]
-[ext_resource type="PackedScene" uid="uid://dyysb0c81k6pu" path="res://card_slot.tscn" id="5_vfke4"]
+[ext_resource type="PackedScene" uid="uid://c6glsa3352pur" path="res://Scenes/contenedor_de_carta.tscn" id="2_13rgp"]
+[ext_resource type="Texture2D" uid="uid://bmec65nr02txq" path="res://Assets/Imagenes/cartavacia - disparo (Personalizado).png" id="3_4u06h"]
+[ext_resource type="Texture2D" uid="uid://c43j3ip6403i" path="res://Assets/Imagenes/cartavacia-vida (Personalizado).png" id="4_8ts10"]
 
 [node name="Carril" type="VBoxContainer"]
 layout_direction = 3
@@ -26,28 +28,18 @@ custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 text = "restar 10"
 
-[node name="botonAreaAtaque" type="Button" parent="."]
-custom_minimum_size = Vector2(300, 30)
-layout_mode = 2
-disabled = true
-
-[node name="EspacioCartaAtaque" parent="." instance=ExtResource("5_vfke4")]
-layout_direction = 1
+[node name="cartaAtaque" parent="." instance=ExtResource("2_13rgp")]
 layout_mode = 2
 
-[node name="Sprite2D" parent="EspacioCartaAtaque" index="0"]
-position = Vector2(110, 0)
+[node name="BotonDeCarta" parent="cartaAtaque" index="0"]
+y_sort_enabled = true
+texture_normal = ExtResource("3_4u06h")
 
-[node name="EspVida" type="Button" parent="."]
-custom_minimum_size = Vector2(300, 30)
+[node name="cartaVida" parent="." instance=ExtResource("2_13rgp")]
 layout_mode = 2
 
-[node name="EspacioCartaVida" parent="." instance=ExtResource("5_vfke4")]
-layout_direction = 1
-layout_mode = 2
-
-[node name="Sprite2D" parent="EspacioCartaVida" index="0"]
-position = Vector2(110, 0)
+[node name="BotonDeCarta" parent="cartaVida" index="0"]
+texture_normal = ExtResource("4_8ts10")
 
 [node name="Barra de Vida" parent="." instance=ExtResource("1_qfgep")]
 layout_mode = 2
@@ -60,9 +52,9 @@ offset_right = 294.5
 offset_bottom = 29.0
 
 [connection signal="pressed" from="Accion" to="." method="_on_accion_pressed"]
-[connection signal="pressed" from="botonAreaAtaque" to="." method="_on_boton_area_ataque_pressed"]
-[connection signal="pressed" from="EspVida" to="." method="_on_esp_vida_pressed"]
+[connection signal="CartaPresionada" from="cartaAtaque" to="." method="_on_carta_ataque_carta_presionada"]
+[connection signal="CartaPresionada" from="cartaVida" to="." method="_on_carta_vida_carta_presionada"]
 
-[editable path="EspacioCartaAtaque"]
-[editable path="EspacioCartaVida"]
+[editable path="cartaAtaque"]
+[editable path="cartaVida"]
 [editable path="Barra de Vida"]

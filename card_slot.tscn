@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://CardSlot.gd" id="1_peonm"]
 [ext_resource type="Texture2D" uid="uid://c1yxl6aqb04ty" path="res://Assets/Imagenes/espacio vida.png" id="2_txv22"]
 
-[node name="CardSlot" type="MarginContainer"]
+[node name="CardSlot" type="AspectRatioContainer"]
 custom_minimum_size = Vector2(90, 120)
 anchors_preset = 8
 anchor_left = 0.5

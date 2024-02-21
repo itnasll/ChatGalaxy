@@ -1,15 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3xl2f0km2lwt"]
+[gd_scene load_steps=7 format=3 uid="uid://c3xl2f0km2lwt"]
 
 [ext_resource type="Script" path="res://Scripts/screen_jugador.gd" id="1_d0ieh"]
 [ext_resource type="PackedScene" uid="uid://bp68dlxrj27if" path="res://Scenes/almacen.tscn" id="1_til80"]
 [ext_resource type="PackedScene" uid="uid://c48eyfmc0kln8" path="res://Scenes/vista_enemigo.tscn" id="2_c4jxg"]
 [ext_resource type="PackedScene" uid="uid://cbnfgtx508iop" path="res://Scenes/carril.tscn" id="3_4htyv"]
+[ext_resource type="PackedScene" uid="uid://bmktppmuuylsa" path="res://Scenes/vida.tscn" id="5_hwdjb"]
+[ext_resource type="FontFile" uid="uid://vcdcpdgsfioy" path="res://Assets/Fuentes/Faster Stroker.otf" id="6_4fvqn"]
 
 [node name="ScreenJugador" type="Node2D"]
 script = ExtResource("1_d0ieh")
 
 [node name="vistaEnemigo" parent="." instance=ExtResource("2_c4jxg")]
-position = Vector2(861, 77)
+position = Vector2(901, 3)
 
 [node name="Almacen" parent="." groups=["almacenes"] instance=ExtResource("1_til80")]
 position = Vector2(774, 354)
@@ -51,9 +53,71 @@ layout_mode = 2
 [node name="Carril3" parent="Carriles" instance=ExtResource("3_4htyv")]
 layout_mode = 2
 
+[node name="Vidaenemigo" parent="." instance=ExtResource("5_hwdjb")]
+offset_left = 27.0
+offset_top = 386.0
+offset_right = 327.0
+offset_bottom = 416.0
+vColor = Color(1, 0, 0.0156863, 1)
+
+[node name="textoVidaEnemigo" type="Label" parent="."]
+offset_left = 28.0
+offset_top = 313.0
+offset_right = 353.0
+offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("6_4fvqn")
+theme_override_font_sizes/font_size = 50
+text = "5000/5000"
+
+[node name="Vidajugador" parent="." instance=ExtResource("5_hwdjb")]
+offset_left = 32.0
+offset_top = 509.0
+offset_right = 332.0
+offset_bottom = 539.0
+
+[node name="textoVidaJugador" type="Label" parent="."]
+offset_left = 37.0
+offset_top = 548.0
+offset_right = 77.0
+offset_bottom = 571.0
+theme_override_fonts/font = ExtResource("6_4fvqn")
+theme_override_font_sizes/font_size = 50
+text = "5000/5000"
+
+[node name="FinTurno" type="Button" parent="."]
+offset_left = 5.0
+offset_top = 429.0
+offset_right = 407.0
+offset_bottom = 499.0
+theme_override_colors/font_color = Color(0.137255, 0.290196, 0.968627, 1)
+theme_override_fonts/font = ExtResource("6_4fvqn")
+theme_override_font_sizes/font_size = 50
+text = "Fin de Turno"
+
+[node name="Deshacer" type="Button" parent="."]
+offset_left = 77.0
+offset_top = 632.0
+offset_right = 284.0
+offset_bottom = 679.0
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.92549, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("6_4fvqn")
+theme_override_font_sizes/font_size = 25
+text = "Deshacer"
+
+[node name="Timer" type="Timer" parent="."]
+
 [connection signal="envioPalabra" from="Almacen" to="." method="_on_almacen_envio_palabra"]
 [connection signal="envioPalabra" from="Almacen2" to="." method="_on_almacen_envio_palabra"]
-[connection signal="Slot_vida_pressed" from="Carriles/Carril1" to="." method="_on_carril_1_slot_vida_pressed"]
+[connection signal="cartaDisparojugada" from="Carriles/Carril1" to="." method="_on_carril_1_carta_disparojugada"]
+[connection signal="cartajugada" from="Carriles/Carril1" to="." method="_on_carril_1_cartajugada"]
+[connection signal="cartaDisparojugada" from="Carriles/Carril2" to="." method="_on_carril_2_carta_disparojugada"]
+[connection signal="cartajugada" from="Carriles/Carril2" to="." method="_on_carril_2_cartajugada"]
+[connection signal="cartaDisparojugada" from="Carriles/Carril3" to="." method="_on_carril_3_carta_disparojugada"]
+[connection signal="cartajugada" from="Carriles/Carril3" to="." method="_on_carril_3_cartajugada"]
+[connection signal="pressed" from="FinTurno" to="." method="_on_fin_turno_pressed"]
+[connection signal="pressed" from="Deshacer" to="." method="_on_deshacer_pressed"]
 
 [editable path="Almacen"]
 [editable path="Almacen2"]

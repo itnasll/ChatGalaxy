@@ -32,12 +32,14 @@ func _process(_delta):
 func al_tocar_carta(asd):
 	if asd.estaSeleccionada:
 		asd.estaSeleccionada= false
-		$"contenedor de carta central".get_child(1).queue_free()
+		asd.limpiar_textura()
+		$"contenedor de carta central".quitar_carta()
 		for carta in $TabContainer/Naves/ScrollContainer/GridContainer.get_children():
 			if asd != carta:
 				carta.get_child(0).disabled = false
 	else:
 		asd.estaSeleccionada= true
+		asd.borde_dorado()
 		var cartaSel = asd.get_child(1).duplicate()
 		$"contenedor de carta central".add_child(cartaSel)
 		for carta in $TabContainer/Naves/ScrollContainer/GridContainer.get_children():
@@ -57,3 +59,14 @@ func _on_boton_agregar_al_mazo_pressed():
 
 func _on_boton_volver_al_menu_pressed():
 	get_tree().change_scene_to_file("res://Scenes/Menu_principal.tscn")
+
+
+func _on_boton_jugar_pressed():
+	print("asdasf")
+#	get_tree().change_scene_to_file
+	pass # Replace with function body.
+
+
+#func _on_boton_de_carta_pressed():
+#	al_tocar_carta(self)
+#	pass # Replace with function body.

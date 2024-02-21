@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dix3hyl6m3h4s"]
+[gd_scene load_steps=5 format=3 uid="uid://dix3hyl6m3h4s"]
 
 [ext_resource type="PackedScene" uid="uid://bmktppmuuylsa" path="res://Scenes/vida.tscn" id="1_fubbb"]
-[ext_resource type="PackedScene" uid="uid://dyysb0c81k6pu" path="res://card_slot.tscn" id="2_eq1ty"]
+[ext_resource type="PackedScene" uid="uid://c6glsa3352pur" path="res://Scenes/contenedor_de_carta.tscn" id="2_4okla"]
+[ext_resource type="Texture2D" uid="uid://c43j3ip6403i" path="res://Assets/Imagenes/cartavacia-vida (Personalizado).png" id="3_v2gqy"]
+[ext_resource type="Texture2D" uid="uid://bmec65nr02txq" path="res://Assets/Imagenes/cartavacia - disparo (Personalizado).png" id="4_4j3rc"]
 
 [node name="CarrilEnemigo" type="Control"]
 custom_minimum_size = Vector2(300, 400)
@@ -25,17 +27,17 @@ alignment = 1
 [node name="Vida" parent="VBoxContainer" instance=ExtResource("1_fubbb")]
 layout_mode = 2
 
-[node name="EspacioCartaVida" parent="VBoxContainer" instance=ExtResource("2_eq1ty")]
+[node name="cartaNave" parent="VBoxContainer" instance=ExtResource("2_4okla")]
 layout_mode = 2
 
-[node name="Sprite2D" parent="VBoxContainer/EspacioCartaVida" index="0"]
-position = Vector2(100, 0)
+[node name="BotonDeCarta" parent="VBoxContainer/cartaNave" index="0"]
+texture_normal = ExtResource("3_v2gqy")
 
-[node name="EspacioCartaAtaque" parent="VBoxContainer" instance=ExtResource("2_eq1ty")]
+[node name="cartaDisparo" parent="VBoxContainer" instance=ExtResource("2_4okla")]
 layout_mode = 2
 
-[node name="Sprite2D" parent="VBoxContainer/EspacioCartaAtaque" index="0"]
-position = Vector2(100, 0)
+[node name="BotonDeCarta" parent="VBoxContainer/cartaDisparo" index="0"]
+texture_normal = ExtResource("4_4j3rc")
 
-[editable path="VBoxContainer/EspacioCartaVida"]
-[editable path="VBoxContainer/EspacioCartaAtaque"]
+[editable path="VBoxContainer/cartaNave"]
+[editable path="VBoxContainer/cartaDisparo"]

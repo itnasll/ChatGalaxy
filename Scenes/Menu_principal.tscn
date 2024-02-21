@@ -102,5 +102,6 @@ offset_top = -20.0
 offset_right = 560.0
 offset_bottom = -20.0
 
+[connection signal="pressed" from="Jugar" to="." method="_on_jugar_pressed"]
 [connection signal="pressed" from="Coleccion" to="." method="_on_coleccion_pressed"]
 [connection signal="pressed" from="Salir" to="." method="_on_salir_pressed"]

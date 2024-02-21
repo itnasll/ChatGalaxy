@@ -1,12 +1,4 @@
-res://Scenes/Tab-mazo.tscn
-res://new_theme.tres
-res://vistamazo.tscn
-res://Scenes/una_carta_en_mazo.tscn
-res://menuMazo.tscn
 res://Scenes/screen_jugador.tscn
-res://Scenes/Menu_principal.tscn
-res://Scenes/selector_de_mazo.tscn
-res://selector de mazo.gd
-res://vista_mazo.gd
-res://Recursos/probando.res
-res://Scenes/Menu_principal.gd
+res://Scenes/contenedor_de_carta.gd
+res://new_theme.tres
+res://Recursos/disparo1.res

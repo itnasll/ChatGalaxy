@@ -16,6 +16,10 @@ config/use_hidden_project_data_directory=false
 config/features=PackedStringArray("4.1", "GL Compatibility")
 config/icon="res://Assets/Imagenes/icon.svg"
 
+[autoload]
+
+MazoSel="*res://mazo_sel.gd"
+
 [display]
 
 window/size/viewport_width=1920

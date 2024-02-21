@@ -56,3 +56,6 @@ func _on_cambiariz_pressed():
 		var cartarecurso = load("res://Recursos/"+jotason[llaves[nro_mazo]][0][0].to_lower()+".res")
 		cartainstancia.Card = cartarecurso
 		cartainstancia.cargar_data()
+
+func entregar_mazo():
+	return jotason[llaves[nro_mazo]]

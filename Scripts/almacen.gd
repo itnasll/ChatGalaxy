@@ -1,19 +1,17 @@
 extends Node2D
 
 #@onready var p_1 = $Mano/P1
-@onready var pre_carta = preload("res://Scenes/cartaVida.tscn")
+#@onready var pre_carta = preload("res://Scenes/cartaVida.tscn")
 signal envioPalabra(argu:Node)
 var palabra_sel : Array
 enum EstadoSeleccionarCarta { SELECCIONADA, NOSELECCIONADA, DESHABILITADAS}
 enum EstadoRepartir { Estado1, Estado2 }
 var estadoRepartir = EstadoRepartir.Estado1
 var estadoSelCarta = EstadoSeleccionarCarta.NOSELECCIONADA
-@export var mazoP = [
-	'Perro', 'Casa', 'Jardín', 'Montaña', 'Libro', 'Computadora',
-	'Felicidad', 'Playa', 'Viaje', 'Amistad', 'Guitarra', 'Café',
-	'Aventura', 'Arte', 'Tiempo', 'Sueño', 'Chocolate', 'Estrella',
-	'Mariposa', 'Silencio'
-]
+@export var mazoP = ["probando", "carlost","probando", "carlost","probando", "carlost"]
+
+@onready var pre_carta = preload("res://Scenes/card.tscn")
+@onready var mis_cartas = preload("res://Scenes/contenedor_de_carta.tscn")
 # Called when the node enters the scene tree for the first time.
 
 func _process(_delta):
@@ -22,8 +20,7 @@ func _process(_delta):
 		EstadoSeleccionarCarta.SELECCIONADA:
 			for j in $Mano.get_children():
 				if j.estaSeleccionada:
-					var mi_textura = load("res://Assets/Imagenes/Gold_Border.png")
-					j.get_child(0).set_texture_normal(mi_textura)
+					j.borde_dorado()
 				else:
 					j.get_child(0).texture_normal = null
 					j.get_child(0).disabled = true
@@ -43,11 +40,6 @@ func _process(_delta):
 func _ready():
 	#$GridContainer/P1.connect("palabra_enviada",  Callable(self, "_on_palabra_enviada"))
 	pass
-	
-#func _on_palabra_enviada():
-#	print("palabra")
-#	print("chau")
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func cambiar_no_seleccionada():
 	var cartasEnGrupo = get_tree().get_nodes_in_group("almacenes")
@@ -56,15 +48,29 @@ func cambiar_no_seleccionada():
 	
 
 func _on_entrega_palabra_pressed():
-	var texture = preload("res://Assets/Imagenes/corazon.svg")
-	var cartaNueva = pre_carta.instantiate()
-	cartaNueva.add_to_group("manoDeeCartasGrupo")
-	cartaNueva.get_child(0).get_node("Imagen").set_texture(texture)
-	cartaNueva.size.x = 90
-	cartaNueva.size.y = 10
+	dar_carta(mazoP[0].to_lower())
+	mazoP.remove_at(0)
 	
-	cartaNueva.connect("enviaCarta",_on_botun_presed)
-	$Mano.add_child(cartaNueva)
+
+func dar_carta(nombre):
+	var carta_nueva = pre_carta.instantiate() 
+	carta_nueva.Card = load("res://Recursos/"+nombre.to_lower()+".res")
+	carta_nueva.cargar_data()
+	var carta = mis_cartas.instantiate()
+	carta.add_child(carta_nueva)
+	carta.add_to_group("manoDeeCartasGrupo")
+	carta.connect("CartaPresionada",_on_botun_presed)
+	$Mano.add_child(carta)
+#funcion que elimina la carta selecionada
+func carta_jugada():
+	var cartasEnGrupo = get_tree().get_nodes_in_group("almacenes")
+	for al in cartasEnGrupo:
+		for carta in al.get_child(0).get_children():
+			if carta.estaSeleccionada:
+				carta.queue_free()
+				for x in cartasEnGrupo:
+					x.estadoSelCarta = EstadoSeleccionarCarta.NOSELECCIONADA
+#	estadoSelCarta = EstadoSeleccionarCarta.NOSELECCIONADA
 
 func _on_botun_presed(asd):
 	if asd.get_parent().get_name() == "Mano":

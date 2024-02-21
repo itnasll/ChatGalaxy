@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0ugy5sl1hyv8"]
+
+[ext_resource type="Script" path="res://Scenes/websocket/Client.gd" id="1_txbx6"]
+[ext_resource type="Script" path="res://addons/nodewebsockets/websocket_client.gd" id="2_xidsi"]
+[ext_resource type="PackedScene" uid="uid://c3xl2f0km2lwt" path="res://Scenes/screen_jugador.tscn" id="3_q050i"]
+
+[node name="Client" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_txbx6")
+
+[node name="WebSocketClient" type="Node" parent="."]
+script = ExtResource("2_xidsi")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 318.0
+offset_top = 214.0
+offset_right = 379.0
+offset_bottom = 245.0
+text = "enviar "
+
+[node name="ScreenJugador" parent="." instance=ExtResource("3_q050i")]
+
+[connection signal="text_received" from="WebSocketClient" to="." method="_on_web_socket_client_text_received"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="fin_turno" from="ScreenJugador" to="." method="_on_screen_jugador_fin_turno"]

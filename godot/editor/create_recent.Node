@@ -1,8 +1,11 @@
+Timer
+TextureRect
+Button
+Label
+AspectRatioContainer
 VBoxContainer
 CenterContainer
 Container
-Label
-Button
 HBoxContainer
 Control
 RichTextLabel

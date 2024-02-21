@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgeri10itd85d"]
+
+[ext_resource type="Script" path="res://Scripts/carril.gd" id="1_3pnt3"]
+[ext_resource type="PackedScene" uid="uid://dyysb0c81k6pu" path="res://card_slot.tscn" id="2_lw013"]
+[ext_resource type="PackedScene" uid="uid://bmktppmuuylsa" path="res://Scenes/vida.tscn" id="3_j710x"]
+
+[node name="Carril" type="VBoxContainer"]
+layout_direction = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -151.5
+offset_top = -390.0
+offset_right = 151.5
+offset_bottom = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_3pnt3")
+
+[node name="Accion" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+text = "restar 10"
+
+[node name="botonAreaAtaque" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+disabled = true
+
+[node name="EspacioCartaAtaque" parent="." instance=ExtResource("2_lw013")]
+layout_direction = 1
+layout_mode = 2
+
+[node name="Sprite2D" parent="EspacioCartaAtaque" index="0"]
+position = Vector2(110, 0)
+
+[node name="EspVida" type="Button" parent="."]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 2
+
+[node name="EspacioCartaVida" parent="." instance=ExtResource("2_lw013")]
+layout_direction = 1
+layout_mode = 2
+
+[node name="Barra de Vida" parent="." instance=ExtResource("3_j710x")]
+layout_mode = 2
+
+[node name="Vida" parent="Barra de Vida" index="0"]
+custom_minimum_size = Vector2(80, 0)
+offset_left = -23.5
+offset_top = 2.0
+offset_right = 294.5
+offset_bottom = 29.0
+
+[connection signal="pressed" from="Accion" to="." method="_on_accion_pressed"]
+[connection signal="pressed" from="botonAreaAtaque" to="." method="_on_boton_area_ataque_pressed"]
+[connection signal="pressed" from="EspVida" to="." method="_on_esp_vida_pressed"]
+
+[editable path="EspacioCartaAtaque"]
+[editable path="Barra de Vida"]
