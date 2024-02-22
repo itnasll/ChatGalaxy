@@ -1,4 +1,4 @@
-extends RichTextLabel
+extends Label
 
 @onready var screen_jugdor = $".."
 
@@ -9,5 +9,5 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	set_text ( "Turno: " + str(screen_jugdor.contador_de_turno))
+	set_text ( "Turno: \n " + str(screen_jugdor.contador_de_turno))
 	pass

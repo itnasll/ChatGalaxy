@@ -1,0 +1,70 @@
+[gd_scene load_steps=6 format=3 uid="uid://2fchf23712qp"]
+
+[ext_resource type="FontFile" uid="uid://vcdcpdgsfioy" path="res://Assets/Fuentes/Faster Stroker.otf" id="1_me8kb"]
+[ext_resource type="Script" path="res://Scenes/win_o_lose.gd" id="1_we7pg"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_w1t8l"]
+
+[sub_resource type="Gradient" id="Gradient_f7kt1"]
+offsets = PackedFloat32Array(0, 0.548387, 1)
+colors = PackedColorArray(0.63, 0.5985, 0, 1, 1, 0.384314, 0.698039, 1, 0, 0.670588, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fkbgv"]
+gradient = SubResource("Gradient_f7kt1")
+fill_to = Vector2(1, 1)
+
+[node name="WinOLose" type="TextureRect"]
+offset_right = 1912.0
+offset_bottom = 1000.0
+texture = SubResource("CanvasTexture_w1t8l")
+expand_mode = 1
+script = ExtResource("1_we7pg")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1912.0
+offset_bottom = 1000.0
+texture = SubResource("GradientTexture2D_fkbgv")
+
+[node name="WoL" type="Label" parent="."]
+layout_mode = 0
+offset_left = 736.0
+offset_top = 392.0
+offset_right = 1279.0
+offset_bottom = 518.0
+theme_override_colors/font_color = Color(0, 0, 0.654902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_me8kb")
+theme_override_font_sizes/font_size = 100
+text = "¡Ganaste!"
+
+[node name="Revancha" type="Button" parent="."]
+layout_mode = 0
+offset_left = 842.0
+offset_top = 518.0
+offset_right = 1150.0
+offset_bottom = 588.0
+theme_override_colors/font_hover_color = Color(0.831373, 0, 0.996078, 1)
+theme_override_fonts/font = ExtResource("1_me8kb")
+theme_override_font_sizes/font_size = 50
+text = "Revancha!"
+
+[node name="BotonVolverAlMenu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 870.0
+offset_top = 700.0
+offset_right = 1150.0
+offset_bottom = 818.0
+theme_override_colors/font_color = Color(0.92549, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("1_me8kb")
+theme_override_font_sizes/font_size = 44
+text = "Volver Al
+menú"
+
+[connection signal="pressed" from="Revancha" to="." method="_on_revancha_pressed"]
+[connection signal="pressed" from="BotonVolverAlMenu" to="." method="_on_boton_volver_al_menu_pressed"]

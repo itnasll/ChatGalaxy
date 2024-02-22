@@ -1,8 +1,8 @@
-RichTextLabel
 Label
-Timer
 TextureRect
 Button
+RichTextLabel
+Timer
 AspectRatioContainer
 VBoxContainer
 CenterContainer

@@ -42,7 +42,11 @@ func _process(_delta):
 
 
 func _on_accion_pressed():
-	$cartaAtaque.borde_rojo()
+#	$"../..".vida_jugador -= 1000
+#	$"../..".vida_enemigo -= 1000
+#	$cartaAtaque.borde_rojo()
+	print($cartaAtaque.get_child(0).get_child_count())
+	$cartaAtaque.get_node("Card").atacar()
 
 
 	

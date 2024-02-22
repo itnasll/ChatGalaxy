@@ -8,11 +8,6 @@ func _ready():
 	carriles=get_children()
 	deshabilitar_todo()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 func habilitar_todo():
 	for carril in carriles:
 		carril.habilitar_todo()

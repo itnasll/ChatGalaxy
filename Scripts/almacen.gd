@@ -47,6 +47,12 @@ func _ready():
 	#$GridContainer/P1.connect("palabra_enviada",  Callable(self, "_on_palabra_enviada"))
 	pass
 
+func desabilitar_mano():
+	estadoSelCarta = EstadoSeleccionarCarta.DESHABILITADAS
+
+func habilitar_mano():
+	estadoSelCarta = EstadoSeleccionarCarta.NOSELECCIONADA
+
 func cambiar_no_seleccionada():
 	var cartasEnGrupo = get_tree().get_nodes_in_group("almacenes")
 	for carta in cartasEnGrupo:

@@ -20,7 +20,7 @@ func _process(_delta):
 	pass
 
 """crear regex para identificar [numero, texto]"""
-func _on_web_socket_client_text_received(peer: WebSocketPeer, message: String):
+func _on_web_socket_client_text_received(_peer: WebSocketPeer, message: String):
 #	print("recived from: " + peer.get_connected_host(), " message: " + message)
 	var testo = message
 	var testo2 = JSON.parse_string(testo)

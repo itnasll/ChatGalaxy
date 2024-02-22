@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://1ew7165qd2hc"]
+[gd_scene load_steps=6 format=3 uid="uid://1ew7165qd2hc"]
 
 [ext_resource type="Script" path="res://Scenes/websocket/Server.gd" id="1_lop6l"]
+[ext_resource type="PackedScene" uid="uid://2fchf23712qp" path="res://Scenes/win_o_lose.tscn" id="2_6qvtt"]
 [ext_resource type="Script" path="res://addons/nodewebsockets/websocket_server.gd" id="2_o1c87"]
 [ext_resource type="Theme" uid="uid://u1r3qsyvbvcj" path="res://new_theme.tres" id="3_tn0wq"]
 [ext_resource type="PackedScene" uid="uid://c3xl2f0km2lwt" path="res://Scenes/screen_jugador.tscn" id="4_em7vb"]
@@ -13,6 +14,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lop6l")
+
+[node name="WinOLose" parent="." instance=ExtResource("2_6qvtt")]
+visible = false
+z_index = 6
+layout_mode = 0
 
 [node name="WebSocketServer" type="Node" parent="."]
 script = ExtResource("2_o1c87")

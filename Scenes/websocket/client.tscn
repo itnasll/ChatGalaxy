@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0ugy5sl1hyv8"]
+[gd_scene load_steps=5 format=3 uid="uid://b0ugy5sl1hyv8"]
 
 [ext_resource type="Script" path="res://Scenes/websocket/Client.gd" id="1_txbx6"]
+[ext_resource type="PackedScene" uid="uid://2fchf23712qp" path="res://Scenes/win_o_lose.tscn" id="2_jj0ll"]
 [ext_resource type="Script" path="res://addons/nodewebsockets/websocket_client.gd" id="2_xidsi"]
 [ext_resource type="PackedScene" uid="uid://c3xl2f0km2lwt" path="res://Scenes/screen_jugador.tscn" id="3_q050i"]
 
@@ -12,6 +13,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_txbx6")
+
+[node name="WinOLose" parent="." instance=ExtResource("2_jj0ll")]
+visible = false
+top_level = true
+light_mask = 3
+z_index = 6
+z_as_relative = false
+layout_mode = 0
 
 [node name="WebSocketClient" type="Node" parent="."]
 script = ExtResource("2_xidsi")

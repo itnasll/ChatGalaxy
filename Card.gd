@@ -61,3 +61,23 @@ func _ready():
 	
 	pass
 	
+func atacar():
+	var valorDeAtaque = int(Valor.text)
+	var padre = self.get_parent().get_parent()
+	#print(self.get_tree().get_node("vistaEnemigo"))
+	var enemigos = self.get_parent().get_parent().get_parent().get_parent().get_node("vistaEnemigo")
+	if padre.name == "Carril1":
+		if enemigos.carril1.cartaNave.tiene_carta:
+			enemigos.carril1.barraVida.vVida -= valorDeAtaque
+		else:
+			self.get_parent().get_parent().get_parent().get_parent().vida_jugador -= valorDeAtaque
+	if padre.name == "Carril2":
+		if enemigos.carril2.cartaNave.tiene_carta:
+			enemigos.carril2.barraVida.vVida -= valorDeAtaque
+		else:
+			self.get_parent().get_parent().get_parent().get_parent().vida_jugador -= valorDeAtaque
+	if padre.name == "Carril3":
+		if enemigos.carril3.cartaNave.tiene_carta:
+			enemigos.carril3.barraVida.vVida -= valorDeAtaque
+		else:
+			self.get_parent().get_parent().get_parent().get_parent().vida_jugador -= valorDeAtaque

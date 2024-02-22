@@ -10,7 +10,7 @@ const VDEs : String = "res://Scenes/cartaVida.tscn"
 var escena_instanciada = preload(VDEs)
 var cartajugada =[]
 var store_jugada_enemiga = []
-
+var store_efectos =[]
 var yo_jugue:bool=false
 var el_jugo:bool=false
 
@@ -40,7 +40,7 @@ func _ready():
 	repartida_inicial()
 	contador_de_turno=1
 
-func _process(delta):
+func _process(_delta):
 	$Vidaenemigo.vVida = vida_enemigo
 	$Vidajugador.vVida = vida_jugador
 	$textoVidaEnemigo.text = str(vida_enemigo)+"/"+str(vida_Maxenemigo)
@@ -48,8 +48,27 @@ func _process(delta):
 	
 	if el_jugo and yo_jugue:
 		mostrarJugadaEnemiga()
+		aplicar_efectos()
+		termino()
 		contador_de_turno+=1
+		$Almacen.habilitar_mano()
+		$Almacen2.habilitar_mano()
 
+
+
+"""aplicar efectos"""
+func aplicar_efectos():
+	for efecto in store_efectos:
+		print(efecto)
+
+func termino():
+	if  $Vidaenemigo.vVida <=0 and $Vidajugador.vVida <=0:
+		$"../WinOLose".empate()
+	elif $Vidajugador.vVida <=0:
+		$"../WinOLose".ganador(false)
+	elif  $Vidaenemigo.vVida <=0:
+		$"../WinOLose".ganador(true)
+		
 func add_line(line):
 	Consol_Box.add_text("\n" +"t: " + str(contador_de_turno) + " - "+ line)
 
@@ -122,32 +141,39 @@ func _on_carril_1_cartajugada(carta):
 	print(carta.get_child(0).Nombre.text.to_lower())
 	cartajugada = ["1", carta.get_child(0).Nombre.text.to_lower()]
 	deshabilitarTodo()
-
+	$Almacen.desabilitar_mano()
+	$Almacen2.desabilitar_mano()
 
 func _on_carril_2_cartajugada(carta):
 	cartajugada = ["2", carta.get_child(0).Nombre.text.to_lower()]
 	deshabilitarTodo()
-
+	$Almacen.desabilitar_mano()
+	$Almacen2.desabilitar_mano()
 
 func _on_carril_3_cartajugada(carta):
 	cartajugada = ["3", carta.get_child(0).Nombre.text.to_lower()]
 	deshabilitarTodo()
-
+	$Almacen.desabilitar_mano()
+	$Almacen2.desabilitar_mano()
 
 func _on_carril_1_carta_disparojugada(carta):
 	cartajugada = ["4", carta.get_child(0).Nombre.text.to_lower()]
 	deshabilitarTodo()
-
+	$Almacen.desabilitar_mano()
+	$Almacen2.desabilitar_mano()
 
 func _on_carril_2_carta_disparojugada(carta):
 	cartajugada = ["5", carta.get_child(0).Nombre.text.to_lower()]
 	deshabilitarTodo()
-
+	$Almacen.desabilitar_mano()
+	$Almacen2.desabilitar_mano()
 
 func _on_carril_3_carta_disparojugada(carta):
 	cartajugada = ["6", carta.get_child(0).Nombre.text.to_lower()]
 	deshabilitarTodo()
-
+	$Almacen.desabilitar_mano()
+	$Almacen2.desabilitar_mano()
+	
 """la carta deberia devolver a la mano segun el tipo no segun donde jugo"""
 """revisar esto"""
 func _on_deshacer_pressed():
@@ -184,6 +210,8 @@ func _on_deshacer_pressed():
 				$Almacen2.dar_carta(cartajugada[1])
 #		habilitarTodo()
 		cartajugada = []
+		$Almacen.habilitar_mano()
+		$Almacen2.habilitar_mano()
 	pass # Replace with function body.
 
 func deshabilitarTodo():

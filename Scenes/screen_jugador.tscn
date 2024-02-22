@@ -110,14 +110,19 @@ theme_override_fonts/font = ExtResource("6_4fvqn")
 theme_override_font_sizes/font_size = 25
 text = "Deshacer"
 
-[node name="Timer" type="Timer" parent="."]
-
-[node name="Contador de Turno" type="RichTextLabel" parent="."]
+[node name="Contador de Turno" type="Label" parent="."]
 offset_left = 85.0
-offset_top = 265.0
+offset_top = 192.0
 offset_right = 286.0
 offset_bottom = 297.0
-text = "Turno: No init"
+theme_override_fonts/font = ExtResource("6_4fvqn")
+theme_override_font_sizes/font_size = 30
+text = "Turno:
+ No init"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_direction = 3
+structured_text_bidi_override = 6
 script = ExtResource("7_vtwqn")
 
 [node name="Consol Box" type="RichTextLabel" parent="."]
