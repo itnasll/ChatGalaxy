@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://c3xl2f0km2lwt"]
+[gd_scene load_steps=9 format=3 uid="uid://c3xl2f0km2lwt"]
 
 [ext_resource type="Script" path="res://Scripts/screen_jugador.gd" id="1_d0ieh"]
 [ext_resource type="PackedScene" uid="uid://bp68dlxrj27if" path="res://Scenes/almacen.tscn" id="1_til80"]
 [ext_resource type="PackedScene" uid="uid://c48eyfmc0kln8" path="res://Scenes/vista_enemigo.tscn" id="2_c4jxg"]
 [ext_resource type="PackedScene" uid="uid://cbnfgtx508iop" path="res://Scenes/carril.tscn" id="3_4htyv"]
+[ext_resource type="Script" path="res://Scenes/Carriles.gd" id="4_gocsp"]
 [ext_resource type="PackedScene" uid="uid://bmktppmuuylsa" path="res://Scenes/vida.tscn" id="5_hwdjb"]
 [ext_resource type="FontFile" uid="uid://vcdcpdgsfioy" path="res://Assets/Fuentes/Faster Stroker.otf" id="6_4fvqn"]
+[ext_resource type="Script" path="res://Scenes/Contador de Turno.gd" id="7_vtwqn"]
 
 [node name="ScreenJugador" type="Node2D"]
 script = ExtResource("1_d0ieh")
@@ -25,6 +27,7 @@ offset_bottom = 642.0
 
 [node name="Almacen2" parent="." groups=["almacenes"] instance=ExtResource("1_til80")]
 position = Vector2(770, 142)
+tipo_de_almacen = 1
 
 [node name="Mano" parent="Almacen2" index="0"]
 offset_left = -763.0
@@ -43,6 +46,7 @@ offset_left = 453.0
 offset_top = 460.0
 offset_right = 1361.0
 offset_bottom = 841.0
+script = ExtResource("4_gocsp")
 
 [node name="Carril1" parent="Carriles" instance=ExtResource("3_4htyv")]
 layout_mode = 2
@@ -107,6 +111,21 @@ theme_override_font_sizes/font_size = 25
 text = "Deshacer"
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Contador de Turno" type="RichTextLabel" parent="."]
+offset_left = 85.0
+offset_top = 265.0
+offset_right = 286.0
+offset_bottom = 297.0
+text = "Turno: No init"
+script = ExtResource("7_vtwqn")
+
+[node name="Consol Box" type="RichTextLabel" parent="."]
+offset_left = 1468.0
+offset_top = 4.0
+offset_right = 1919.0
+offset_bottom = 333.0
+text = "Console Box"
 
 [connection signal="envioPalabra" from="Almacen" to="." method="_on_almacen_envio_palabra"]
 [connection signal="envioPalabra" from="Almacen2" to="." method="_on_almacen_envio_palabra"]

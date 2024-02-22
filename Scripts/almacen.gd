@@ -1,5 +1,11 @@
 extends Node2D
 
+enum ALMACEN_TIPOS {
+	NAVES,
+	DISPAROS
+}
+
+@export var tipo_de_almacen:ALMACEN_TIPOS
 #@onready var p_1 = $Mano/P1
 #@onready var pre_carta = preload("res://Scenes/cartaVida.tscn")
 signal envioPalabra(argu:Node)
@@ -74,6 +80,7 @@ func carta_jugada():
 
 func _on_botun_presed(asd):
 	if asd.get_parent().get_name() == "Mano":
+		carta_seleccionada()
 #		print("el padreses__", asd.get_parent())
 		if asd.estaSeleccionada:
 			asd.estaSeleccionada = false
@@ -85,4 +92,15 @@ func _on_botun_presed(asd):
 		else:
 			asd.estaSeleccionada = true
 			estadoSelCarta = EstadoSeleccionarCarta.SELECCIONADA
+			
+			
+func carta_seleccionada():
+	if tipo_de_almacen == ALMACEN_TIPOS.NAVES:
+		$"../Carriles".habilitar_espacios_naves()
+		pass
+	elif tipo_de_almacen == ALMACEN_TIPOS.DISPAROS:
+		$"../Carriles".habilitar_espacios_disparos()
+		pass
+		
+	pass
 		

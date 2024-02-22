@@ -77,12 +77,31 @@ func _on_carta_ataque_carta_presionada(asd):
 	pass # Replace with function body.
 
 func deshabilitar_todo():
-	$cartaAtaque.borde_rojo()
-	$cartaVida.borde_rojo()
+	deshabilitar_espacio_disparo()
+	deshabilitar_espacio_nave()
+	pass
 
 func habilitar_todo():
+	habilitar_espacio_disparo()
+	habilitar_espacio_nave()
+	pass
+	
+func habilitar_espacio_disparo():
 	$cartaAtaque.habilitar()
+	pass
+	
+func deshabilitar_espacio_disparo():
+	$cartaAtaque.borde_rojo()
+	pass
+	
+func habilitar_espacio_nave():
 	$cartaVida.habilitar()
+	pass
 	
+func deshabilitar_espacio_nave():
+	$cartaVida.borde_rojo()
+	pass
 	
+
 	
+

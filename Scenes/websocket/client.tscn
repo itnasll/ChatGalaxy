@@ -16,16 +16,8 @@ script = ExtResource("1_txbx6")
 [node name="WebSocketClient" type="Node" parent="."]
 script = ExtResource("2_xidsi")
 
-[node name="Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 318.0
-offset_top = 214.0
-offset_right = 379.0
-offset_bottom = 245.0
-text = "enviar "
-
 [node name="ScreenJugador" parent="." instance=ExtResource("3_q050i")]
 
+[connection signal="cartaRecibida" from="." to="ScreenJugador" method="_on_client_carta_recibida"]
 [connection signal="text_received" from="WebSocketClient" to="." method="_on_web_socket_client_text_received"]
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="fin_turno" from="ScreenJugador" to="." method="_on_screen_jugador_fin_turno"]

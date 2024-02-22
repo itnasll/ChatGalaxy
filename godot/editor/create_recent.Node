@@ -1,14 +1,14 @@
+RichTextLabel
+Label
 Timer
 TextureRect
 Button
-Label
 AspectRatioContainer
 VBoxContainer
 CenterContainer
 Container
 HBoxContainer
 Control
-RichTextLabel
 MenuButton
 AcceptDialog
 ConfirmationDialog

@@ -10,8 +10,10 @@ res://Scenes/carril_enemigo.tscn
 res://Scenes/contenedor_de_carta.tscn
 res://Scenes/card.tscn
 res://menuMazo.tscn
-res://Mazo.gd
-res://Recursos/Mazo.tres
-res://Scenes/carril_enemigo.gd
-res://Scenes/vista_enemigo.gd
+res://Scenes/almacen.tscn
+res://card_slot.tscn
+res://Scenes/Button_Scene.tscn
+res://Scenes/Carriles.gd
+res://Scripts/carril.gd
+res://Scripts/almacen.gd
 res://Scripts/screen_jugador.gd
