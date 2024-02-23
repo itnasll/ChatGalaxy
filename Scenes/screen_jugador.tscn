@@ -25,6 +25,12 @@ offset_top = 514.0
 offset_right = -491.0
 offset_bottom = 642.0
 
+[node name="botonDeMazo" parent="Almacen" index="1"]
+offset_left = 958.0
+offset_top = 222.0
+offset_right = 1048.0
+offset_bottom = 342.0
+
 [node name="Almacen2" parent="." groups=["almacenes"] instance=ExtResource("1_til80")]
 position = Vector2(770, 142)
 tipo_de_almacen = 1
@@ -35,10 +41,12 @@ offset_top = 730.0
 offset_right = -107.0
 offset_bottom = 858.0
 
-[node name="EntregaPalabra" parent="Almacen2" index="1"]
-offset_top = 372.0
-offset_bottom = 403.0
-text = "entregar ataq"
+[node name="botonDeMazo" parent="Almacen2" index="1"]
+offset_left = 960.0
+offset_top = 195.0
+offset_right = 1050.0
+offset_bottom = 315.0
+tipo_de_mazo = 1
 
 [node name="Carriles" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(80, 80)
@@ -132,6 +140,13 @@ offset_right = 1919.0
 offset_bottom = 333.0
 text = "Console Box"
 
+[node name="Accion" type="Button" parent="."]
+offset_left = 149.0
+offset_top = 93.0
+offset_right = 208.0
+offset_bottom = 124.0
+text = "Accion"
+
 [connection signal="envioPalabra" from="Almacen" to="." method="_on_almacen_envio_palabra"]
 [connection signal="envioPalabra" from="Almacen2" to="." method="_on_almacen_envio_palabra"]
 [connection signal="cartaDisparojugada" from="Carriles/Carril1" to="." method="_on_carril_1_carta_disparojugada"]
@@ -142,6 +157,7 @@ text = "Console Box"
 [connection signal="cartajugada" from="Carriles/Carril3" to="." method="_on_carril_3_cartajugada"]
 [connection signal="pressed" from="FinTurno" to="." method="_on_fin_turno_pressed"]
 [connection signal="pressed" from="Deshacer" to="." method="_on_deshacer_pressed"]
+[connection signal="pressed" from="Accion" to="." method="_on_accion_pressed"]
 
 [editable path="Almacen"]
 [editable path="Almacen2"]

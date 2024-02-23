@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://7ke21q8n4hyb"]
+
+[ext_resource type="Script" path="res://TextureButton.gd" id="1_52yni"]
+
+[node name="botonDeMazo" type="TextureButton"]
+custom_minimum_size = Vector2(90, 120)
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_52yni")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

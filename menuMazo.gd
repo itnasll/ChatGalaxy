@@ -6,21 +6,21 @@ extends Node2D
 
 
 func _ready():
-	for x in range(5):
+	for x in CartasColeccion.get_navesExistentes():
 		var carta_nueva = pre_carta.instantiate() 
-		carta_nueva.Card = load("res://Recursos/probando.res")
+		carta_nueva.Card = load("res://Recursos/"+x+".res")
 		carta_nueva.cargar_data()
 		var carta = mis_cartas.instantiate()
 		carta.add_child(carta_nueva)
 		$TabContainer/Naves/ScrollContainer/GridContainer.add_child(carta)
 		carta.connect("CartaPresionada",al_tocar_carta )
-	for x in range(5):
+	for x in CartasColeccion.get_disparosExistentes():
 		var carta_nueva = pre_carta.instantiate() 
-		carta_nueva.Card = load("res://Recursos/carlost.res")
+		carta_nueva.Card = load("res://Recursos/"+x+".res")
 		carta_nueva.cargar_data()
 		var carta = mis_cartas.instantiate()
 		carta.add_child(carta_nueva)
-		$TabContainer/Naves/ScrollContainer/GridContainer.add_child(carta)
+		$TabContainer/Disparos/ScrollContainer/GridContainer.add_child(carta)
 		carta.connect("CartaPresionada",al_tocar_carta )
 
 func _process(_delta):

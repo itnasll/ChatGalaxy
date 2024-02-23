@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bp68dlxrj27if"]
+[gd_scene load_steps=3 format=3 uid="uid://bp68dlxrj27if"]
 
 [ext_resource type="Script" path="res://Scripts/almacen.gd" id="1_2vrtr"]
+[ext_resource type="PackedScene" uid="uid://7ke21q8n4hyb" path="res://Scenes/boton_de_mazo.tscn" id="2_cdiyn"]
 
 [node name="Almacen" type="Node2D"]
 script = ExtResource("1_2vrtr")
@@ -13,11 +14,4 @@ offset_right = 1146.0
 offset_bottom = 641.0
 columns = 6
 
-[node name="EntregaPalabra" type="Button" parent="."]
-offset_left = 992.0
-offset_top = 335.0
-offset_right = 1131.0
-offset_bottom = 366.0
-text = "entregar palabra"
-
-[connection signal="pressed" from="EntregaPalabra" to="." method="_on_entrega_palabra_pressed"]
+[node name="botonDeMazo" parent="." instance=ExtResource("2_cdiyn")]

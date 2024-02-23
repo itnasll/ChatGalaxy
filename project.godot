@@ -19,6 +19,7 @@ config/icon="res://Assets/Imagenes/icon.svg"
 [autoload]
 
 MazoSel="*res://mazo_sel.gd"
+CartasColeccion="*res://cartas_coleccion.gd"
 
 [display]
 

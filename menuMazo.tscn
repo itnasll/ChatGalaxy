@@ -10,7 +10,7 @@
 script = ExtResource("1_e231a")
 
 [node name="TabContainer" type="TabContainer" parent="."]
-offset_right = 891.0
+offset_right = 693.0
 offset_bottom = 999.0
 theme_override_fonts/font = ExtResource("3_6s6ro")
 theme_override_font_sizes/font_size = 22
@@ -43,29 +43,28 @@ offset_right = 889.0
 offset_bottom = 969.0
 
 [node name="GridContainer" type="GridContainer" parent="TabContainer/Disparos/ScrollContainer"]
-clip_contents = true
 custom_minimum_size = Vector2(0, 800)
 layout_mode = 2
 columns = 9
 
 [node name="VistaMazo" parent="." instance=ExtResource("2_nd6i0")]
-offset_left = 1286.0
+offset_left = 1120.0
 offset_top = 6.0
-offset_right = 1286.0
+offset_right = 1120.0
 offset_bottom = 6.0
 
 [node name="contenedor de carta central" parent="." instance=ExtResource("2_rqkn1")]
-offset_left = 968.0
-offset_top = 100.0
-offset_right = 1141.0
-offset_bottom = 320.0
+offset_left = 750.0
+offset_top = 102.0
+offset_right = 923.0
+offset_bottom = 322.0
 scale = Vector2(1.5, 1.5)
 
 [node name="BotonAgregarAlMazo" type="Button" parent="."]
-offset_left = 959.0
-offset_top = 517.0
-offset_right = 1239.0
-offset_bottom = 599.0
+offset_left = 741.0
+offset_top = 519.0
+offset_right = 1021.0
+offset_bottom = 601.0
 theme_override_colors/font_color = Color(0.92549, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
 theme_override_constants/outline_size = 1
@@ -74,10 +73,10 @@ theme_override_font_sizes/font_size = 44
 text = "Agregar"
 
 [node name="BotonVolverAlMenu" type="Button" parent="."]
-offset_left = 959.0
-offset_top = 757.0
-offset_right = 1239.0
-offset_bottom = 875.0
+offset_left = 741.0
+offset_top = 759.0
+offset_right = 1021.0
+offset_bottom = 877.0
 theme_override_colors/font_color = Color(0.92549, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
 theme_override_constants/outline_size = 1
@@ -87,10 +86,10 @@ text = "Volver Al
 menú"
 
 [node name="BotonJugar" type="Button" parent="."]
-offset_left = 959.0
-offset_top = 917.0
-offset_right = 1239.0
-offset_bottom = 999.0
+offset_left = 741.0
+offset_top = 919.0
+offset_right = 1021.0
+offset_bottom = 1001.0
 theme_override_colors/font_color = Color(0.92549, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0, 0, 1, 1)
 theme_override_constants/outline_size = 1

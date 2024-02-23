@@ -22,7 +22,7 @@ script = ExtResource("1_gshnp")
 [node name="VistaMazos" type="TabContainer" parent="."]
 layout_mode = 0
 offset_top = 10.0
-offset_right = 600.0
+offset_right = 747.0
 offset_bottom = 960.0
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("2_1nd3t")
@@ -71,9 +71,9 @@ text = "Guardar"
 
 [node name="EliminarMazo" type="Button" parent="."]
 layout_mode = 0
-offset_left = 475.0
+offset_left = 575.0
 offset_top = 960.0
-offset_right = 600.0
+offset_right = 700.0
 offset_bottom = 997.0
 theme_override_fonts/font = ExtResource("2_1nd3t")
 theme_override_font_sizes/font_size = 23

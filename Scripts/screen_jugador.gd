@@ -228,3 +228,9 @@ func habilitarTodo():
 func _on_client_carta_recibida():
 	cartajugada = []
 	pass # Replace with function body.
+
+
+func _on_accion_pressed():
+	$Carriles/Carril1.get_node("cartaAtaque").get_node("Card").atacar()
+	$vistaEnemigo.get_node("HBoxContainer/CarrilEnemigo/VBoxContainer/cartaDisparo").get_node("Card").atacar()
+	pass # Replace with function body.

@@ -59,10 +59,6 @@ func cambiar_no_seleccionada():
 			carta.estadoSelCarta = EstadoSeleccionarCarta.NOSELECCIONADA
 	
 
-func _on_entrega_palabra_pressed():
-	dar_carta(mazoP[0].to_lower())
-	mazoP.remove_at(0)
-	
 
 func dar_carta(nombre):
 	var carta_nueva = pre_carta.instantiate() 

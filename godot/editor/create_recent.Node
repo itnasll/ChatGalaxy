@@ -1,6 +1,7 @@
-Label
 TextureRect
+TextureButton
 Button
+Label
 RichTextLabel
 Timer
 AspectRatioContainer
