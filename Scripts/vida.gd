@@ -1,5 +1,5 @@
 extends Control
-
+class_name Vida2
 @export var vVida : int
 @export var vColor : Color = "green"
 @export var vVMax : int = 100
@@ -22,4 +22,6 @@ func _process(_delta):
 	$Vida.add_theme_stylebox_override("fill", sb)
 	sb.bg_color = vColor
 
-
+func quitar_vida(numero:int):
+	vVida -= numero
+	return numero

@@ -76,7 +76,6 @@ func _on_carta_vida_carta_presionada(asd):
 func _on_carta_ataque_carta_presionada(asd):
 	if $cartaVida.tiene_carta:
 		jugar_carta("../../Almacen2", asd)
-		print("ataque")
 		emit_signal("cartaDisparojugada", asd)
 	pass # Replace with function body.
 

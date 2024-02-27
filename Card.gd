@@ -1,5 +1,6 @@
 extends Sprite2D
 
+class_name Carta
 @export var Card : CardData
 
 @export_category("Card Elements")
@@ -18,6 +19,8 @@ const clas = preload("res://CardData.gd")
 @export var tipo : clas.Clases
 
 @export var is_selected : bool = false
+
+var objetivo : Vida2
 
 #cambiar a init...
 func cargar_data():
@@ -83,4 +86,21 @@ func atacar():
 		else:
 			self.get_parent().get_parent().get_parent().get_parent().vida_jugador -= valorDeAtaque
 #	if padre.get_parent().name =="CarrilEnemigo":
-		
+
+func atacar2(valor):
+	objetivo -= valor
+
+func establecer_objetivo(objetivo2: Vida2):
+	if objetivo2.vVida <= 0:
+		objetivo = self.get_parent().get_parent().get_parent().get_parent().get_node("Vidajugador")
+		print(objetivo, "vidaas")
+	else:
+		objetivo = objetivo2
+		print(objetivo, "sdf")
+
+func atacar3(atacante : Carta, disparo : Carta, objetivo: Carta):
+	var valor_ataque_inicial = int(disparo.Valor.text)
+	var clase_atacante = atacante.tipo
+	var clase_disparo = disparo.tipo
+	var clase_objetivo = objetivo.tipo
+	pass

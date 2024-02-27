@@ -73,6 +73,9 @@ func add_line(line):
 	Consol_Box.add_text("\n" +"t: " + str(contador_de_turno) + " - "+ line)
 
 func repartida_inicial():
+	for i in range(4):
+		$Almacen.get_node("botonDeMazo")._on_pressed()
+		$Almacen2.get_node("botonDeMazo")._on_pressed()
 	pass
 
 """ deshabilitar el boton de fin de turno"""
@@ -231,6 +234,8 @@ func _on_client_carta_recibida():
 
 
 func _on_accion_pressed():
-	$Carriles/Carril1.get_node("cartaAtaque").get_node("Card").atacar()
-	$vistaEnemigo.get_node("HBoxContainer/CarrilEnemigo/VBoxContainer/cartaDisparo").get_node("Card").atacar()
+#	$Carriles/Carril1.get_node("cartaAtaque").get_node("Card").atacar()
+#	$vistaEnemigo.get_node("HBoxContainer/CarrilEnemigo/VBoxContainer/cartaDisparo").get_node("Card").atacar()
+	var obj = $vistaEnemigo.get_node("HBoxContainer/CarrilEnemigo/VBoxContainer/Vida")
+	$Carriles/Carril1.get_node("cartaVida").get_node("Card").establecer_objetivo(obj)
 	pass # Replace with function body.

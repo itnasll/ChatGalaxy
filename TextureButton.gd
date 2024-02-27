@@ -12,7 +12,6 @@ var mazo2 =[]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	mazo = MazoSel.get_selected_deck()
-	print("Mazo:  ", mazo)
 	if tipo_de_mazo == tipo.NAVE :
 		texture = preload("res://Assets/Imagenes/cartaTraseraNave.png")
 		for x in mazo:
@@ -30,17 +29,10 @@ func _ready():
 		$".".add_child(imagen_carta)
 		imagen_carta.position.y = posiX
 		posiX += 5
-		
-
-#		"otromazo"
-		pass
-	print("Mazos: ", mazo2)
-	
-	pass # Replace with function body.
-
+	mazo2.shuffle()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if mazo2.size() == 0:
 		$".".disabled = true
 		if tipo_de_mazo == tipo.DISPARO:

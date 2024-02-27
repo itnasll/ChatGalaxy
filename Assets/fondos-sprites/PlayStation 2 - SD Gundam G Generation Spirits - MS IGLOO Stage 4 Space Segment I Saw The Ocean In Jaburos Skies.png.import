@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://cebtbcdrjfgow"
+path="res://godot/imported/PlayStation 2 - SD Gundam G Generation Spirits - MS IGLOO Stage 4 Space Segment I Saw The Ocean In Jaburos Skies.png-12ebd52278eba8d760782037650868d6.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://Assets/fondos-sprites/PlayStation 2 - SD Gundam G Generation Spirits - MS IGLOO Stage 4 Space Segment I Saw The Ocean In Jaburos Skies.png"
+dest_files=["res://godot/imported/PlayStation 2 - SD Gundam G Generation Spirits - MS IGLOO Stage 4 Space Segment I Saw The Ocean In Jaburos Skies.png-12ebd52278eba8d760782037650868d6.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
