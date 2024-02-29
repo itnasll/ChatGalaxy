@@ -100,7 +100,44 @@ func establecer_objetivo(objetivo2: Vida2):
 
 func atacar3(atacante : Carta, disparo : Carta, objetivo: Carta):
 	var valor_ataque_inicial = int(disparo.Valor.text)
+	var vida_objetivo = int(objetivo.Valor.text)
 	var clase_atacante = atacante.tipo
 	var clase_disparo = disparo.tipo
 	var clase_objetivo = objetivo.tipo
+	
+	var modificador_uno = modificador(clase_atacante, clase_objetivo)
+	var modificador_dos = modificador(clase_disparo, clase_objetivo)
+	
+	pass
+
+func modificador(cl1, cl2):
+	"""arrai_modificador = EstConf, AlGalá,  ImpeCel, OdeO, FeNeb"""
+	var arrai_modificador
+	match cl1:
+		0:
+			arrai_modificador = ["x1", "x2", "/2", "x3", "/3"]
+			#return("Estelaris Confederados")
+		1:
+			arrai_modificador = ["/3", "x1", "x2", "/2", "x3"]
+			#return("Alianza Galáctica")
+		2:
+			arrai_modificador = ["x3", "/3", "x1", "x2", "/2"]
+			#return("Imperio Celestial")
+		3:
+			arrai_modificador = ["/2", "x3", "/3", "x1", "x2"]
+			#return("Orden de Orion")
+		4:
+			arrai_modificador = ["x2", "/2", "x3", "/3", "x1"]
+			#return("Federación Nebular")
+	match  cl2:
+		0:
+			return arrai_modificador[0]
+		1:
+			return arrai_modificador[1]
+		2:
+			return arrai_modificador[2]
+		3:
+			return arrai_modificador[3]
+		4:
+			return arrai_modificador[4]
 	pass
