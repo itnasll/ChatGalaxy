@@ -159,5 +159,6 @@ text = "Accion"
 [connection signal="pressed" from="Deshacer" to="." method="_on_deshacer_pressed"]
 [connection signal="pressed" from="Accion" to="." method="_on_accion_pressed"]
 
+[editable path="vistaEnemigo"]
 [editable path="Almacen"]
 [editable path="Almacen2"]

@@ -14,7 +14,8 @@ var store_efectos =[]
 var yo_jugue:bool=false
 var el_jugo:bool=false
 
-@onready var carriles = $Carriles.get_node(".")
+@onready var sus_carriles : Vista_Enemigo = $vistaEnemigo.get_node(".")
+@onready var mis_carriles : Carriles = $Carriles.get_node(".")
 
 #enum EstadoSeleccionarCarta { SELECCIONADA, NOSELECCIONADA}
 #enum EstadoRepartir { Estado1, Estado2 }
@@ -36,6 +37,8 @@ func _ready():
 
 #	aca hay que ponerle disparos al almacen 2
 	$Almacen2.mazoP = MazoSel.get_selected_deck()
+
+	init_Carriles()
 	
 	repartida_inicial()
 	contador_de_turno=1
@@ -55,6 +58,14 @@ func _process(_delta):
 		$Almacen2.habilitar_mano()
 
 
+"""agregar referencia a Carril izquierdo y derecho"""
+func init_Carriles():
+
+	mis_carriles.carriles[0].carrilOpuesto = sus_carriles.carril1
+	mis_carriles.carriles[1].carrilOpuesto = sus_carriles.carril2
+	mis_carriles.carriles[2].carrilOpuesto = sus_carriles.carril3
+	
+	pass
 
 """aplicar efectos"""
 func aplicar_efectos():
@@ -236,6 +247,19 @@ func _on_client_carta_recibida():
 func _on_accion_pressed():
 #	$Carriles/Carril1.get_node("cartaAtaque").get_node("Card").atacar()
 #	$vistaEnemigo.get_node("HBoxContainer/CarrilEnemigo/VBoxContainer/cartaDisparo").get_node("Card").atacar()
-	var obj = $vistaEnemigo.get_node("HBoxContainer/CarrilEnemigo/VBoxContainer/Vida")
-	$Carriles/Carril1.get_node("cartaVida").get_node("Card").establecer_objetivo(obj)
+#	var obj = $vistaEnemigo.get_node("HBoxContainer/CarrilEnemigo/VBoxContainer/Vida")
+#	$Carriles/Carril1.get_node("cartaVida").get_node("Card").establecer_objetivo(obj)
+	
+	Carta.atacar4(mis_carriles.carriles[2])
+#
+#	var Atacante =mis_carriles.carriles[0].slotCartaVida.get_child(0)
+#	print("atacante :", Atacante)
+#	var Disparo =mis_carriles.carriles[0].slotCartaAtaque.get_child(0)
+#	print("Disparo :",Disparo)
+#	var Objetivo =mis_carriles.carriles[1].slotCartaVida.get_child(0)
+#	print("Objetivo/vida :",Objetivo)
+#
+#
+#
+#	Carta.atacar3(Atacante,Disparo ,Objetivo)
 	pass # Replace with function body.

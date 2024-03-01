@@ -20,7 +20,7 @@ const clas = preload("res://CardData.gd")
 
 @export var is_selected : bool = false
 
-var objetivo : Vida2
+var objetivo : BarraVida
 
 #cambiar a init...
 func cargar_data():
@@ -90,7 +90,7 @@ func atacar():
 func atacar2(valor):
 	objetivo -= valor
 
-func establecer_objetivo(objetivo2: Vida2):
+func establecer_objetivo(objetivo2: BarraVida):
 	if objetivo2.vVida <= 0:
 		objetivo = self.get_parent().get_parent().get_parent().get_parent().get_node("Vidajugador")
 		print(objetivo, "vidaas")
@@ -98,7 +98,7 @@ func establecer_objetivo(objetivo2: Vida2):
 		objetivo = objetivo2
 		print(objetivo, "sdf")
 
-func atacar3(atacante : Carta, disparo : Carta, objetivo: Carta):
+static func atacar3(atacante : Carta, disparo : Carta, objetivo: Carta):
 	var valor_ataque_inicial = int(disparo.Valor.text)
 	var vida_objetivo = int(objetivo.Valor.text)
 	var clase_atacante = atacante.tipo
@@ -107,27 +107,66 @@ func atacar3(atacante : Carta, disparo : Carta, objetivo: Carta):
 	
 	var modificador_uno = modificador(clase_atacante, clase_objetivo)
 	var modificador_dos = modificador(clase_disparo, clase_objetivo)
+	var valor_final = valor_ataque_inicial * modificador_uno * modificador_dos
+	valor_final = round(valor_final)
+	print(valor_final)
+	objetivo.Valor.text = str( vida_objetivo - valor_final)
+	pass
 	
+static func atacar4(carril:Carril):
+
+	var valor_ataque_inicial = int(carril.slotCartaAtaque.get_child(0).Valor.text)
+	
+	var vida_objetivo = carril.carrilOpuesto.barraVida.vVida
+	var clase_atacante = carril.slotCartaVida.get_child(0).tipo
+	var clase_disparo = carril.slotCartaAtaque.get_child(0).tipo
+	var clase_objetivo = carril.carrilOpuesto.cartaNave.get_child(0).tipo
+	print(clase_disparo)
+	
+	var modificador_uno = modificador(clase_atacante, clase_objetivo)
+	var modificador_dos = modificador(clase_disparo, clase_objetivo)
+	var valor_final = valor_ataque_inicial * modificador_uno * modificador_dos
+	valor_final = round(valor_final)
+	print(valor_final)
+	carril.carrilOpuesto.barraVida.quitar_vida(valor_final)
+#	objetivo.Valor.text = str( vida_objetivo - valor_final)
 	pass
 
-func modificador(cl1, cl2):
-	"""arrai_modificador = EstConf, AlGalá,  ImpeCel, OdeO, FeNeb"""
+
+static func modificador(cl1, cl2):
+	"""
+	var matriz: Array
+	matriz[0] = ["x1", "x2", "/2", "x3", "/3"]
+			#return("Estelaris Confederados")
+
+	matriz[1] = ["/3", "x1", "x2", "/2", "x3"]
+			#return("Alianza Galáctica")
+
+	matriz[2] = ["x3", "/3", "x1", "x2", "/2"]
+			#return("Imperio Celestial")
+
+	matriz[3] = ["/2", "x3", "/3", "x1", "x2"]
+			#return("Orden de Orion")
+	matriz[4] = ["x2", "/2", "x3", "/3", "x1"]
+	"""
+	
+	"""arrai_modificador = EstConf, AlGalá,  ImpeCel, OdeO, FeNeb. asdads"""
 	var arrai_modificador
 	match cl1:
 		0:
-			arrai_modificador = ["x1", "x2", "/2", "x3", "/3"]
+			arrai_modificador = [1, 2, 0.5, 3, 1/3]
 			#return("Estelaris Confederados")
 		1:
-			arrai_modificador = ["/3", "x1", "x2", "/2", "x3"]
+			arrai_modificador = [1/3, 1, 2, 1/2, 3]
 			#return("Alianza Galáctica")
 		2:
-			arrai_modificador = ["x3", "/3", "x1", "x2", "/2"]
+			arrai_modificador = [3, 1/3, 1, 2, 1/2]
 			#return("Imperio Celestial")
 		3:
-			arrai_modificador = ["/2", "x3", "/3", "x1", "x2"]
+			arrai_modificador = [1/2, 3, 1/3, 1, 2]
 			#return("Orden de Orion")
 		4:
-			arrai_modificador = ["x2", "/2", "x3", "/3", "x1"]
+			arrai_modificador = [2, 1/2, 3, 1/3, 1]
 			#return("Federación Nebular")
 	match  cl2:
 		0:

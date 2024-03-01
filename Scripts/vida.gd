@@ -1,5 +1,5 @@
 extends Control
-class_name Vida2
+class_name BarraVida
 @export var vVida : int
 @export var vColor : Color = "green"
 @export var vVMax : int = 100

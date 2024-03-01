@@ -1,11 +1,13 @@
 extends HBoxContainer
 
-var carriles:Array[Node]
+class_name  Carriles
+var carriles:Array[Carril]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	carriles = get_children()
-	carriles=get_children()
+	
+	for nodo in self.get_children():
+		carriles.append(nodo as Carril)
 	deshabilitar_todo()
 
 func habilitar_todo():

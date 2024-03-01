@@ -1,0 +1,163 @@
+[gd_scene load_steps=9 format=3 uid="uid://cyg7n355kykna"]
+
+[ext_resource type="Script" path="res://Scripts/screen_jugador.gd" id="1_hmp0t"]
+[ext_resource type="PackedScene" uid="uid://c48eyfmc0kln8" path="res://Scenes/vista_enemigo.tscn" id="2_t03dc"]
+[ext_resource type="PackedScene" uid="uid://bp68dlxrj27if" path="res://Scenes/almacen.tscn" id="3_u16k8"]
+[ext_resource type="Script" path="res://Scenes/Carriles.gd" id="4_23ek2"]
+[ext_resource type="PackedScene" uid="uid://cbnfgtx508iop" path="res://Scenes/carril.tscn" id="5_5dvpo"]
+[ext_resource type="PackedScene" uid="uid://bmktppmuuylsa" path="res://Scenes/vida.tscn" id="6_k6htb"]
+[ext_resource type="FontFile" uid="uid://vcdcpdgsfioy" path="res://Assets/Fuentes/Faster Stroker.otf" id="7_nimm2"]
+[ext_resource type="Script" path="res://Scenes/Contador de Turno.gd" id="8_lsd3i"]
+
+[node name="TestScreenJugador" type="Node2D"]
+script = ExtResource("1_hmp0t")
+
+[node name="vistaEnemigo" parent="." instance=ExtResource("2_t03dc")]
+position = Vector2(901, 3)
+
+[node name="Almacen" parent="." groups=["almacenes"] instance=ExtResource("3_u16k8")]
+position = Vector2(774, 354)
+
+[node name="Mano" parent="Almacen" index="0"]
+layout_direction = 3
+offset_left = -1147.0
+offset_top = 514.0
+offset_right = -491.0
+offset_bottom = 642.0
+
+[node name="botonDeMazo" parent="Almacen" index="1"]
+offset_left = 958.0
+offset_top = 222.0
+offset_right = 1048.0
+offset_bottom = 342.0
+
+[node name="Almacen2" parent="." groups=["almacenes"] instance=ExtResource("3_u16k8")]
+position = Vector2(770, 142)
+tipo_de_almacen = 1
+
+[node name="Mano" parent="Almacen2" index="0"]
+offset_left = -763.0
+offset_top = 730.0
+offset_right = -107.0
+offset_bottom = 858.0
+
+[node name="botonDeMazo" parent="Almacen2" index="1"]
+offset_left = 960.0
+offset_top = 195.0
+offset_right = 1050.0
+offset_bottom = 315.0
+tipo_de_mazo = 1
+
+[node name="Carriles" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(80, 80)
+offset_left = 453.0
+offset_top = 460.0
+offset_right = 1361.0
+offset_bottom = 841.0
+script = ExtResource("4_23ek2")
+
+[node name="Carril1" parent="Carriles" instance=ExtResource("5_5dvpo")]
+layout_mode = 2
+
+[node name="Carril2" parent="Carriles" instance=ExtResource("5_5dvpo")]
+layout_mode = 2
+
+[node name="Carril3" parent="Carriles" instance=ExtResource("5_5dvpo")]
+layout_mode = 2
+
+[node name="Vidaenemigo" parent="." instance=ExtResource("6_k6htb")]
+offset_left = 27.0
+offset_top = 386.0
+offset_right = 327.0
+offset_bottom = 416.0
+vColor = Color(1, 0, 0.0156863, 1)
+
+[node name="textoVidaEnemigo" type="Label" parent="."]
+offset_left = 28.0
+offset_top = 313.0
+offset_right = 353.0
+offset_bottom = 378.0
+theme_override_fonts/font = ExtResource("7_nimm2")
+theme_override_font_sizes/font_size = 50
+text = "5000/5000"
+
+[node name="Vidajugador" parent="." instance=ExtResource("6_k6htb")]
+offset_left = 32.0
+offset_top = 509.0
+offset_right = 332.0
+offset_bottom = 539.0
+
+[node name="textoVidaJugador" type="Label" parent="."]
+offset_left = 37.0
+offset_top = 548.0
+offset_right = 77.0
+offset_bottom = 571.0
+theme_override_fonts/font = ExtResource("7_nimm2")
+theme_override_font_sizes/font_size = 50
+text = "5000/5000"
+
+[node name="FinTurno" type="Button" parent="."]
+offset_left = 5.0
+offset_top = 429.0
+offset_right = 407.0
+offset_bottom = 499.0
+theme_override_colors/font_color = Color(0.137255, 0.290196, 0.968627, 1)
+theme_override_fonts/font = ExtResource("7_nimm2")
+theme_override_font_sizes/font_size = 50
+text = "Fin de Turno"
+
+[node name="Deshacer" type="Button" parent="."]
+offset_left = 77.0
+offset_top = 632.0
+offset_right = 284.0
+offset_bottom = 679.0
+theme_override_colors/font_color = Color(0.752941, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0.92549, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("7_nimm2")
+theme_override_font_sizes/font_size = 25
+text = "Deshacer"
+
+[node name="Contador de Turno" type="Label" parent="."]
+offset_left = 85.0
+offset_top = 192.0
+offset_right = 286.0
+offset_bottom = 297.0
+theme_override_fonts/font = ExtResource("7_nimm2")
+theme_override_font_sizes/font_size = 30
+text = "Turno:
+ No init"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_direction = 3
+structured_text_bidi_override = 6
+script = ExtResource("8_lsd3i")
+
+[node name="Consol Box" type="RichTextLabel" parent="."]
+offset_left = 1468.0
+offset_top = 4.0
+offset_right = 1919.0
+offset_bottom = 333.0
+text = "Console Box"
+
+[node name="Accion" type="Button" parent="."]
+offset_left = 149.0
+offset_top = 93.0
+offset_right = 208.0
+offset_bottom = 124.0
+text = "Accion"
+
+[connection signal="envioPalabra" from="Almacen" to="." method="_on_almacen_envio_palabra" flags=18]
+[connection signal="envioPalabra" from="Almacen2" to="." method="_on_almacen_envio_palabra" flags=18]
+[connection signal="cartaDisparojugada" from="Carriles/Carril1" to="." method="_on_carril_1_carta_disparojugada" flags=18]
+[connection signal="cartajugada" from="Carriles/Carril1" to="." method="_on_carril_1_cartajugada" flags=18]
+[connection signal="cartaDisparojugada" from="Carriles/Carril2" to="." method="_on_carril_2_carta_disparojugada" flags=18]
+[connection signal="cartajugada" from="Carriles/Carril2" to="." method="_on_carril_2_cartajugada" flags=18]
+[connection signal="cartaDisparojugada" from="Carriles/Carril3" to="." method="_on_carril_3_carta_disparojugada" flags=18]
+[connection signal="cartajugada" from="Carriles/Carril3" to="." method="_on_carril_3_cartajugada" flags=18]
+[connection signal="pressed" from="FinTurno" to="." method="_on_fin_turno_pressed" flags=18]
+[connection signal="pressed" from="Deshacer" to="." method="_on_deshacer_pressed" flags=18]
+[connection signal="pressed" from="Accion" to="." method="_on_accion_pressed" flags=18]
+
+[editable path="Almacen"]
+[editable path="Almacen2"]
