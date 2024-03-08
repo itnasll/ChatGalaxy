@@ -1,15 +1,27 @@
 extends VBoxContainer
+class_name Carril
 signal Slot_vida_pressed
 signal cartajugada(carta)
 signal cartaDisparojugada(carta)
 var texDisaNave = preload("res://Assets/Imagenes/cartadeshabilitada-vida.png")
 var texDisaDisp = preload("res://Assets/Imagenes/carta deshabilitada - disparo.png")
 var texDisaVac = preload("res://Assets/Imagenes/red_Border.png")
+
+@export var carrilOpuesto:Carril_Enemigo
+@export var carrilIzquierda:Carril
+@export var carrilDerecha:Carril
+
+
+@onready var slotCartaVida = $cartaVida
+@onready var slotCartaAtaque = $cartaAtaque
+@onready var slotBarraVida:BarraVida = $"Barra de Vida"
+
 #
 #@onready var espacioCartaVida = $EspacioCartaVida
 #@onready var espacioCartaAtaque = $EspacioCartaAtaque
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	pass # Replace with function body.
 
 
