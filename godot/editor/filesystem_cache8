@@ -1,6 +1,6 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1709059914
-Card.gd::GDScript::-1::1709009960::0::1::::<>Sprite2D<>::
+::res://::1709603151
+Card.gd::GDScript::-1::1709068665::0::1::::Carta<>Sprite2D<>::
 CardData.gd::GDScript::-1::1707260984::0::1::::CardData<>Resource<>::
 CardSlot.gd::GDScript::-1::1708033758::0::1::::<>AspectRatioContainer<>::
 card_slot.tscn::PackedScene::8894435373861121822::1708615548::0::1::::<><>::res://CardSlot.gd<>uid://c1yxl6aqb04ty
@@ -9,12 +9,12 @@ export_presets.cfg::TextFile::-1::1709004989::0::1::::<><>::
 Mazo.gd::GDScript::-1::1708575469::0::1::::Mazo<>Resource<>::
 mazo_sel.gd::GDScript::-1::1708721594::0::1::::<>Node<>::
 menuMazo.gd::GDScript::-1::1708719829::0::1::::<>Node2D<>::
-menuMazo.tscn::PackedScene::2364980272632897429::1708985241::0::1::::<><>::res://menuMazo.gd<>uid://u1r3qsyvbvcj::::res://new_theme.tres<>uid://0lq6163gbafq::::res://vistamazo.tscn<>uid://c6glsa3352pur::::res://Scenes/contenedor_de_carta.tscn<>uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf
+menuMazo.tscn::PackedScene::2364980272632897429::1709060684::0::1::::<><>::res://menuMazo.gd<>uid://u1r3qsyvbvcj::::res://new_theme.tres<>uid://0lq6163gbafq::::res://vistamazo.tscn<>uid://c6glsa3352pur::::res://Scenes/contenedor_de_carta.tscn<>uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf
 new_label_settings.tres::LabelSettings::7226136578961177415::1707360694::0::1::::<><>::uid://vcdcpdgsfioy
-new_theme.tres::Theme::1458533754771227513::1708982354::0::1::::<><>::uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf
+new_theme.tres::Theme::1458533754771227513::1709060551::0::1::::<><>::uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf
 selector de mazo.gd::GDScript::-1::1707941509::0::1::::<>Control<>::
-TextureButton.gd::GDScript::-1::1708725811::0::1::::<>TextureButton<>::
-vistamazo.tscn::PackedScene::1778457492517072354::1708985241::0::1::::<><>::res://vista_mazo.gd<>uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf
+TextureButton.gd::GDScript::-1::1709061653::0::1::::<>TextureButton<>::
+vistamazo.tscn::PackedScene::1778457492517072354::1709060684::0::1::::<><>::res://vista_mazo.gd<>uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf
 vista_mazo.gd::GDScript::-1::1707783413::0::1::::<>Control<>::
 ::res://addons/::1707940601
 ::res://addons/nodewebsockets/::1708575493
@@ -98,34 +98,34 @@ disparo2.res::Resource/Resource::1871429116970571122::1708718478::0::1::::<><>::
 Mazo.tres::Resource/Resource::2432683318803400705::1708719703::0::1::::<><>::res://Mazo.gd
 probando.res::Resource/Resource::3078233316679465565::1707782375::0::1::::<><>::res://CardData.gd<>uid://bliaru4o4l0y8
 ::res://Recursos/efectos/::1708620214
-::res://Scenes/::1708985242
+::res://Scenes/::1709061652
 almacen.tscn::PackedScene::3505258680855328733::1708718505::0::1::::<><>::res://Scripts/almacen.gd<>uid://7ke21q8n4hyb
 AreaCartaVida.gd::GDScript::-1::1706898581::0::1::::<>MarginContainer<>::
-boton_de_mazo.tscn::PackedScene::2266979250205996581::1708985241::0::1::::<><>::res://TextureButton.gd
+boton_de_mazo.tscn::PackedScene::2266979250205996581::1709060684::0::1::::<><>::res://TextureButton.gd
 Button_Scene.tscn::PackedScene::8420324151975370585::1708615548::0::1::::<><>::
-card.tscn::PackedScene::4561177222146181049::1708985241::0::1::::<><>::uid://bj4eb2iyx76dl::::res://Recursos/probando.res<>res://Card.gd
-carril.tscn::PackedScene::4870182456426205475::1708984980::0::1::::<><>::uid://bmktppmuuylsa::::res://Scenes/vida.tscn<>res://Scripts/carril.gd<>uid://c6glsa3352pur::::res://Scenes/contenedor_de_carta.tscn<>uid://bmec65nr02txq::::res://Assets/Imagenes/cartavacia - disparo (Personalizado).png<>uid://c43j3ip6403i::::res://Assets/Imagenes/cartavacia-vida (Personalizado).png
+card.tscn::PackedScene::4561177222146181049::1709061652::0::1::::<><>::uid://bj4eb2iyx76dl::::res://Recursos/probando.res<>res://Card.gd
+carril.tscn::PackedScene::4870182456426205475::1708984980::0::1::::<><>::uid://bmktppmuuylsa
 Carriles.gd::GDScript::-1::1708618937::0::1::::<>HBoxContainer<>::
 carril_enemigo.gd::GDScript::-1::1708575469::0::1::::<>Control<>::
-carril_enemigo.tscn::PackedScene::7769967343860628168::1708985242::0::1::::<><>::res://Scenes/carril_enemigo.gd<>uid://bmktppmuuylsa::::res://Scenes/vida.tscn<>uid://c6glsa3352pur::::res://Scenes/contenedor_de_carta.tscn<>uid://c43j3ip6403i::::res://Assets/Imagenes/cartavacia-vida (Personalizado).png<>uid://bmec65nr02txq::::res://Assets/Imagenes/cartavacia - disparo (Personalizado).png
+carril_enemigo.tscn::PackedScene::7769967343860628168::1709060685::0::1::::<><>::res://Scenes/carril_enemigo.gd<>uid://bmktppmuuylsa::::res://Scenes/vida.tscn<>uid://c6glsa3352pur::::res://Scenes/contenedor_de_carta.tscn<>uid://c43j3ip6403i::::res://Assets/Imagenes/cartavacia-vida (Personalizado).png<>uid://bmec65nr02txq::::res://Assets/Imagenes/cartavacia - disparo (Personalizado).png
 cartaVida.tscn::PackedScene::7509190539688124819::1707250496::0::1::::<><>::res://Scripts/cartaVida.gd<>uid://db26mcb0u4kfs
 Contador de Turno.gd::GDScript::-1::1708617498::0::1::::<>Label<>::
 contenedor_de_carta2.tscn::PackedScene::362338762143558398::1708056855::0::1::::<><>::res://Scenes/contenedor_de_carta.gd<>uid://db26mcb0u4kfs
-contenedor_de_carta.gd::GDScript::-1::1708982354::0::1::::<>Control<>::
+contenedor_de_carta.gd::GDScript::-1::1709060551::0::1::::<>Control<>::
 contenedor_de_carta.tscn::PackedScene::6961781862468168749::1708710401::0::1::::<><>::res://Scenes/contenedor_de_carta.gd<>uid://db26mcb0u4kfs
 Control.gd::GDScript::-1::1706828480::0::1::::<>Control<>::
 main.tscn::PackedScene::6045693592178218706::1706816936::0::1::::<><>::res://Scripts/Main.gd<>uid://bmktppmuuylsa
 Menu_principal.gd::GDScript::-1::1708030824::0::1::::<>Control<>::
-Menu_principal.tscn::PackedScene::7538024350736669914::1708985241::0::1::::<><>::res://Scenes/Menu_principal.gd<>uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf<>uid://u1r3qsyvbvcj::::res://new_theme.tres<>uid://d6qbqejc6fs8::::res://Scenes/selector_de_mazo.tscn
+Menu_principal.tscn::PackedScene::7538024350736669914::1709060684::0::1::::<><>::res://Scenes/Menu_principal.gd<>uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf<>uid://u1r3qsyvbvcj::::res://new_theme.tres<>uid://d6qbqejc6fs8::::res://Scenes/selector_de_mazo.tscn
 palabra.tscn::PackedScene::3763961394758631618::1707081351::0::1::::<><>::uid://bvcofvvynfa4v
-screen_jugador.tscn::PackedScene::6786326082658673091::1708985241::0::1::::<><>::res://Scripts/screen_jugador.gd<>uid://bp68dlxrj27if::::res://Scenes/almacen.tscn<>uid://c48eyfmc0kln8::::res://Scenes/vista_enemigo.tscn<>uid://cbnfgtx508iop::::res://Scenes/carril.tscn<>res://Scenes/Carriles.gd<>uid://bmktppmuuylsa::::res://Scenes/vida.tscn<>uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf<>res://Scenes/Contador de Turno.gd
+screen_jugador.tscn::PackedScene::6786326082658673091::1709060684::0::1::::<><>::res://Scripts/screen_jugador.gd<>uid://bp68dlxrj27if::::res://Scenes/almacen.tscn<>uid://c48eyfmc0kln8::::res://Scenes/vista_enemigo.tscn<>uid://cbnfgtx508iop::::res://Scenes/carril.tscn<>res://Scenes/Carriles.gd<>uid://bmktppmuuylsa::::res://Scenes/vida.tscn<>uid://vcdcpdgsfioy::::res://Assets/Fuentes/Faster Stroker.otf<>res://Scenes/Contador de Turno.gd
 selector_de_mazo.tscn::PackedScene::275536345933754833::1707943290::0::1::::<><>::res://selector de mazo.gd<>uid://dx1l3e1737us1
 Tab-mazo.tscn::PackedScene::4518030257332459205::1708026120::0::1::::<><>::res://Scripts/Tab-mazo.gd
 una_carta_en_mazo.gd::GDScript::-1::1707596549::0::1::::<>HBoxContainer<>::
 una_carta_en_mazo.tscn::PackedScene::4888099387936940844::1708026120::0::1::::<><>::res://Scenes/una_carta_en_mazo.gd<>uid://b58p6mmcmvaej
-vida.tscn::PackedScene::3250511801985520656::1708985241::0::1::::<><>::res://Scripts/vida.gd
+vida.tscn::PackedScene::3250511801985520656::1709060684::0::1::::<><>::res://Scripts/vida.gd
 vista_enemigo.gd::GDScript::-1::1708575469::0::1::::<>Node2D<>::
-vista_enemigo.tscn::PackedScene::6876728307076986407::1708985241::0::1::::<><>::uid://dix3hyl6m3h4s::::res://Scenes/carril_enemigo.tscn<>res://Scenes/vista_enemigo.gd
+vista_enemigo.tscn::PackedScene::6876728307076986407::1709060685::0::1::::<><>::uid://dix3hyl6m3h4s::::res://Scenes/carril_enemigo.tscn<>res://Scenes/vista_enemigo.gd
 win_o_lose.gd::GDScript::-1::1708618938::0::1::::<>TextureRect<>::
 win_o_lose.tscn::PackedScene::1905554907182518699::1708634957::0::1::::<><>::uid://vcdcpdgsfioy
 ::res://Scenes/websocket/::1708710400
@@ -135,14 +135,14 @@ Control.gd::GDScript::-1::1708033157::0::1::::<>Control<>::
 control.tscn::PackedScene::5672628429339689729::1708710400::0::1::::<><>::res://Scenes/websocket/Control.gd
 Server.gd::GDScript::-1::1708383875::0::1::::<>Control<>::
 server.tscn::PackedScene::1834561779731534068::1708710400::0::1::::<><>::res://Scenes/websocket/Server.gd<>uid://2fchf23712qp
-::res://Scripts/::1708985064
+::res://Scripts/::1709060684
 almacen.gd::GDScript::-1::1708718316::0::1::::<>Node2D<>::
 baseCarta.gd::GDScript::-1::1706396758::0::1::::<>Node<>::
 carril.gd::GDScript::-1::1708982354::0::1::::<>VBoxContainer<>::
 cartaVida.gd::GDScript::-1::1707012357::0::1::::<>MarginContainer<>::
 Main.gd::GDScript::-1::1706383617::0::1::::<>Node2D<>::
 palabra.gd::GDScript::-1::1706383617::0::1::::<>CenterContainer<>::
-screen_jugador.gd::GDScript::-1::1708985064::0::1::::<>Node2D<>::
+screen_jugador.gd::GDScript::-1::1709060684::0::1::::<>Node2D<>::
 sdg.txt::TextFile::-1::1706383617::0::1::::<><>::
 Tab-mazo.gd::GDScript::-1::1707505299::0::1::::<>ScrollContainer<>::
 vida.gd::GDScript::-1::1708982512::0::1::::Vida2<>Control<>::
