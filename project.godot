@@ -25,6 +25,7 @@ CartasColeccion="*res://cartas_coleccion.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1000
+window/stretch/scale=0.5
 
 [dotnet]
 
