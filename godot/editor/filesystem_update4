@@ -2,11 +2,6 @@ res://Scenes/card.tscn
 res://Scenes/contenedor_de_carta.gd
 res://new_theme.tres
 res://menuMazo.tscn
-res://vistamazo.tscn
-res://Scenes/boton_de_mazo.tscn
 res://Scenes/screen_jugador.tscn
-res://Scenes/Menu_principal.tscn
-res://Scenes/vida.tscn
-res://Scenes/vista_enemigo.tscn
-res://Scenes/carril_enemigo.tscn
-res://menuMazo.gd
+res://Scenes/carril.tscn
+res://Scenes/una_carta_en_mazo.tscn

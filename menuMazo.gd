@@ -49,7 +49,10 @@ func al_tocar_carta(asd):
 func _on_boton_agregar_al_mazo_pressed():
 	var mazo_sel = $VistaMazo.get_child(0).get_child($VistaMazo.get_child(0).current_tab)
 	var carta_sel = $"contenedor de carta central".get_child(1)
-	var nombre_rec = carta_sel.Nombre.text
+	var nombre_rec = carta_sel.id.text 
+	"""cambiar por id y poner los nombres de archivosd en id"""
+	nombre_rec = nombre_rec.replace(" ", "")
+	print(nombre_rec)
 #	for x in mazo_sel:
 	if !mazo_sel.esta_o_no_esta(nombre_rec):
 		mazo_sel.nueva_carta("res://Recursos/"+nombre_rec+".res")

@@ -1,6 +1,6 @@
 extends Node
 
-var navesExistentes = ["probando","carlost"]
+var navesExistentes = ["probando","carlost","AcorazadoCorazondelCazador"]
 var disparosExistentes= [ "disparo1", "disparo2"]
 
 
